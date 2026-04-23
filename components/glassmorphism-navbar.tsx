@@ -7,11 +7,15 @@ const allLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/#services' },
-  { label: 'Projects', href: '/#projects' },
+  { label: 'Portfolio', href: '/portfolio' },
 ];
 
 const leftLinks = allLinks.slice(0, 2);
 const rightLinks = allLinks.slice(2);
+
+function isHashLink(href: string) {
+  return href.includes('#');
+}
 
 export default function GlassmorphismNavbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,14 +56,25 @@ export default function GlassmorphismNavbar() {
           {/* Left links — hidden on mobile */}
           <div className="hidden md:flex items-center gap-8 flex-1">
             {leftLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
-              >
-                {link.label}
-                <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
-              </Link>
+              isHashLink(link.href) ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
+                </Link>
+              )
             ))}
           </div>
 
@@ -80,14 +95,25 @@ export default function GlassmorphismNavbar() {
           {/* Right links + Contact — hidden on mobile */}
           <div className="hidden md:flex items-center gap-8 flex-1 justify-end">
             {rightLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
-              >
-                {link.label}
-                <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
-              </Link>
+              isHashLink(link.href) ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
+                </Link>
+              )
             ))}
             <Link
               href="/#contact"
@@ -139,20 +165,37 @@ export default function GlassmorphismNavbar() {
         >
           <div className="flex flex-col items-center gap-1 px-6 pb-8 pt-4 border-t border-[#D4AF37]/10">
             {allLinks.map((link, i) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="w-full text-center py-3 text-[11px] tracking-[0.28em] uppercase font-medium text-[#c9c2b4] hover:text-white border-b border-[#D4AF37]/08 transition-colors duration-300"
-                style={{
-                  transitionDelay: menuOpen ? `${i * 55}ms` : '0ms',
-                  opacity: menuOpen ? 1 : 0,
-                  transform: menuOpen ? 'none' : 'translateY(8px)',
-                  transition: `opacity 0.4s ${i * 55}ms, transform 0.4s ${i * 55}ms, color 0.3s`,
-                }}
-              >
-                {link.label}
-              </Link>
+              isHashLink(link.href) ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center py-3 text-[11px] tracking-[0.28em] uppercase font-medium text-[#c9c2b4] hover:text-white border-b border-[#D4AF37]/08 transition-colors duration-300"
+                  style={{
+                    transitionDelay: menuOpen ? `${i * 55}ms` : '0ms',
+                    opacity: menuOpen ? 1 : 0,
+                    transform: menuOpen ? 'none' : 'translateY(8px)',
+                    transition: `opacity 0.4s ${i * 55}ms, transform 0.4s ${i * 55}ms, color 0.3s`,
+                  }}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center py-3 text-[11px] tracking-[0.28em] uppercase font-medium text-[#c9c2b4] hover:text-white border-b border-[#D4AF37]/08 transition-colors duration-300"
+                  style={{
+                    transitionDelay: menuOpen ? `${i * 55}ms` : '0ms',
+                    opacity: menuOpen ? 1 : 0,
+                    transform: menuOpen ? 'none' : 'translateY(8px)',
+                    transition: `opacity 0.4s ${i * 55}ms, transform 0.4s ${i * 55}ms, color 0.3s`,
+                  }}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Link
               href="/#contact"

@@ -220,7 +220,7 @@ function ServicesCards() {
 
 export default function ServicesSection() {
   return (
-    <section className="relative overflow-hidden border-t border-[#D4AF37]/10 bg-[#060606] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section id="services" className="scroll-mt-24 relative overflow-hidden border-t border-[#D4AF37]/10 bg-[#060606] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_8%,rgba(212,175,55,0.12)_0%,rgba(212,175,55,0)_30%)]" />
       <div className="relative mx-auto w-full max-w-7xl">
         <ServicesIntro />
