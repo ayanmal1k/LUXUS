@@ -26,23 +26,23 @@ const principles = [
 
 const leaders = [
   {
-    name: 'Alessandro Riva',
-    role: 'Founder & Creative Director',
+    name: 'Paolo Basile',
+    role: 'Chief Engineer',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80',
   },
   {
-    name: 'Elena Castillo',
-    role: 'Chief Operations Officer',
+    name: 'Matteo Paolicchi',
+    role: 'Head of International Relations',
     image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80',
   },
   {
-    name: 'Luca Moretti',
-    role: 'Lead Architect',
+    name: 'Martin Dhamo',
+    role: 'Head of Construction',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80',
   },
   {
-    name: 'Matteo Valli',
-    role: 'Investment Strategy',
+    name: 'Gianluca Iacoponi',
+    role: 'Head of Interiors',
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80',
   },
 ];
@@ -71,17 +71,9 @@ export default function AboutPage() {
               className="reveal max-w-xl text-5xl leading-[0.94] text-[#F6F3EA] sm:text-6xl lg:text-7xl"
               style={{ animationDelay: '220ms' }}
             >
-              From the marble
+              From Tuscan Marble
               <br />
-              quarries of
-              <br />
-              <span className="text-[#D4AF37] italic">Carrara</span> to
-              <br />
-              the azure
-              <br />
-              horizons of
-              <br />
-              <span className="text-[#D4AF37] italic">Panama.</span>
+              to American Horizons
             </h1>
 
             <div
@@ -89,13 +81,13 @@ export default function AboutPage() {
               style={{ animationDelay: '320ms' }}
             >
               <p>
-                LUXUS was born from a singular obsession: the marriage of Old World European artistry with the raw,
-                untamed potential of the Pacific coastline. Our journey began in Italy, where precision is not a
-                metric, but a heritage.
+                The story of Luxus begins amidst Tuscany&apos;s noble stones and rare materials, where over 25 years of
+                luxury villa construction expertise converges with superyacht interior mastery.
               </p>
               <p>
-                In Panama, we found our ultimate canvas. A crossroads of the world where tropical soul meets global
-                ambition. We do not just build residences; we curate lifestyles for the alchemists of the modern age.
+                This unique fusion delivers residences engineered with marine-grade durability, golden-ratio spatial
+                flow, and artisanal finishes—creating permanent waterfront galleries that transcend conventional
+                architecture across the Americas.
               </p>
             </div>
 
