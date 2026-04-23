@@ -108,16 +108,16 @@ export default function MasteringTropicalHorizonSection() {
               viewport={{ once: true }}
               className="text-4xl sm:text-5xl lg:text-[3.6rem] font-serif font-bold leading-[1.06] text-[#F5F2EA]"
             >
-              Mastering the{' '}
+              From Yatching <br /> to{' '}
               <span
                 style={{
                   color: '#D4AF37',
                   textShadow: '0 0 40px rgba(212,175,55,0.25), 0 8px 24px rgba(0,0,0,0.4)',
                 }}
               >
-                Tropical
+                Living
               </span>
-              <br />Horizon
+              
             </motion.h2>
 
             {/* Divider */}
@@ -137,9 +137,7 @@ export default function MasteringTropicalHorizonSection() {
               viewport={{ once: true }}
               className="text-[#BFB8A7] text-base leading-[1.9] font-light max-w-lg"
             >
-              Our approach integrates the precision of Italian architectural philosophy
-              with the unique environmental demands of the Central American tropics.
-              Every stone is curated; every view is engineered.
+             Our Approach Adapts Superyacht Engineering to Residential Architecture. Marine-Grade Materials withstand Coastal Extremes, Structural Solutions Proven on 200-ft Vessels ensure Resilience, and Spatial Flow Mirrors the World's Finest onboard Design. Every Residence Seamlessly extends into Nature's Grandeur.
             </motion.p>
 
             {/* Stats row */}

@@ -158,13 +158,12 @@ function ServicesIntro() {
       <div className="max-w-2xl">
         <p className="mb-5 text-[10px] font-medium tracking-[0.24em] text-[#D4AF37] uppercase">Our Services</p>
         <h2 className="text-5xl leading-[0.96] text-[#F5F2EA] sm:text-6xl lg:text-7xl">
-          The Art of
+          Engineering Artistry
           <br />
-          <span className="italic">Modern Living.</span>
+          <span className="italic">at Scale.</span>
         </h2>
         <p className="mt-6 max-w-xl text-base leading-8 text-[#BFB8A7]">
-          From raw earth to architectural masterpieces, Luxus provides a comprehensive suite of services that redefine
-          high-end residential and commercial landscapes.
+          Luxus Transforms Raw Land into Sculptural Residences through Yacht-Inspired Engineering, Golden-Ratio Spatial Mastery, and Rare Italian Materials. Our Principals' 25+ years of Tuscan Luxury Expertise Create Permanent Waterfront Galleries Redefining Standards across the Americas.
         </p>
       </div>
 

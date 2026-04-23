@@ -24,13 +24,13 @@ type Messages = {
 export const translations: Record<Locale, Messages> = {
   en: {
     hero: {
-      explorationTag: 'Explore Development Intelligently',
+      explorationTag: 'Become Part of a New Dimension',
       exploreHeritage: 'Explore Heritage',
       headingLine1: 'Italian Luxury',
-      headingLine2: 'in Panama',
+      headingLine2: 'in Americas',
       description:
-        'Where craftsmanship meets world-class development. We bridge the gap between Mediterranean heritage and the tropical avant-garde.',
-      cta: 'Discover Projects',
+        'From Italian Excellence in Residential Construction and Yacht Interiors Emerges a New Dimension of Luxury Living.',
+      cta: 'Discover the Excellence',
       imageAlt: 'Luxury buildings with water reflection',
       stats: {
         experience: 'Years of Experience',
@@ -41,13 +41,13 @@ export const translations: Record<Locale, Messages> = {
   },
   it: {
     hero: {
-      explorationTag: 'Esplora lo sviluppo con intelligenza',
+      explorationTag: 'Diventa parte di una nuova dimensione',
       exploreHeritage: 'Esplora l eredita',
       headingLine1: 'Lusso Italiano',
-      headingLine2: 'a Panama',
+      headingLine2: 'in Americas',
       description:
-        "Dove l'artigianalita incontra lo sviluppo di livello mondiale. Colmiamo il divario tra l'eredita mediterranea e l'avanguardia tropicale.",
-      cta: 'Scopri i progetti',
+        "Dall'eccellenza italiana nell'edilizia residenziale e negli interni di yacht nasce una nuova dimensione del vivere di lusso.",
+      cta: 'Scopri l eccellenza',
       imageAlt: "Edifici di lusso con riflesso sull'acqua",
       stats: {
         experience: 'Anni di esperienza',
@@ -58,13 +58,13 @@ export const translations: Record<Locale, Messages> = {
   },
   es: {
     hero: {
-      explorationTag: 'Explora el desarrollo con inteligencia',
+      explorationTag: 'Conviértete en parte de una nueva dimensión',
       exploreHeritage: 'Explora la herencia',
       headingLine1: 'Lujo Italiano',
-      headingLine2: 'en Panama',
+      headingLine2: 'en Americas',
       description:
-        'Donde la artesania se une al desarrollo de clase mundial. Cerramos la brecha entre la herencia mediterranea y la vanguardia tropical.',
-      cta: 'Descubrir proyectos',
+        'Desde la excelencia italiana en construcción residencial e interiores de yates surge una nueva dimensión de vida de lujo.',
+      cta: 'Descubrir la excelencia',
       imageAlt: 'Edificios de lujo con reflejo en el agua',
       stats: {
         experience: 'Anos de experiencia',
