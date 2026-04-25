@@ -1,31 +1,13 @@
+ 'use client';
+
 import { Quote } from 'lucide-react';
+import { useI18n } from '@/components/i18n-provider';
 
 type Testimonial = {
   quote: string;
   name: string;
   role: string;
 };
-
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      'The level of detail in the stonework is unmatched in Central America. It truly feels like a slice of Lake Como in Panama.',
-    name: 'Alessandra Rossi',
-    role: 'Penthouse Owner, Ocean Reef',
-  },
-  {
-    quote:
-      'Working with Luxus was a cinematic experience. Their vision for urban development redefined what I expected from luxury.',
-    name: 'Julian Varela',
-    role: 'CEO, Pan-Global Dev',
-  },
-  {
-    quote:
-      'From the initial blueprints to the final touch of the handle, the Italian craftsmanship is evident in every single corner.',
-    name: 'Elena Castillo',
-    role: 'Private Investor',
-  },
-];
 
 function TestimonialCard({ item, index }: { item: Testimonial; index: number }) {
   return (
@@ -53,13 +35,33 @@ function TestimonialCard({ item, index }: { item: Testimonial; index: number }) 
 }
 
 export default function TestimonialsSection() {
+  const { t } = useI18n();
+
+  const testimonials: Testimonial[] = [
+    {
+      quote: t('testimonialsSection.items.first.quote'),
+      name: t('testimonialsSection.items.first.name'),
+      role: t('testimonialsSection.items.first.role'),
+    },
+    {
+      quote: t('testimonialsSection.items.second.quote'),
+      name: t('testimonialsSection.items.second.name'),
+      role: t('testimonialsSection.items.second.role'),
+    },
+    {
+      quote: t('testimonialsSection.items.third.quote'),
+      name: t('testimonialsSection.items.third.name'),
+      role: t('testimonialsSection.items.third.role'),
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden border-t border-[#D4AF37]/10 bg-[#050505] px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(212,175,55,0.1)_0%,rgba(212,175,55,0)_32%)]" />
 
       <div className="relative mx-auto w-full max-w-7xl">
         <div className="mb-14 text-center sm:mb-16">
-          <h2 className="text-5xl text-[#F0EBDD] italic sm:text-6xl">The Luxus Lifestyle</h2>
+          <h2 className="text-5xl text-[#F0EBDD] italic sm:text-6xl">{t('testimonialsSection.heading')}</h2>
           <span className="mx-auto mt-5 block h-px w-24 bg-[#D4AF37]/70" />
         </div>
 

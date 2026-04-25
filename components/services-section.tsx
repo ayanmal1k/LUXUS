@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, Building2, Compass, Leaf, Sparkles } from 'lucide-react';
+import { ArrowRight, Building2, Compass, Leaf, Sparkles, type LucideIcon } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -10,83 +10,134 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { useI18n } from '@/components/i18n-provider';
 
 type ServiceItem = {
-  title: string;
-  description: string;
-  action: string;
-  focus: string[];
+  titleKey:
+    | 'servicesSection.cards.realEstate.title'
+    | 'servicesSection.cards.turnkey.title'
+    | 'servicesSection.cards.renovations.title'
+    | 'servicesSection.cards.sustainability.title';
+  descriptionKey:
+    | 'servicesSection.cards.realEstate.description'
+    | 'servicesSection.cards.turnkey.description'
+    | 'servicesSection.cards.renovations.description'
+    | 'servicesSection.cards.sustainability.description';
+  actionKey:
+    | 'servicesSection.cards.realEstate.action'
+    | 'servicesSection.cards.turnkey.action'
+    | 'servicesSection.cards.renovations.action'
+    | 'servicesSection.cards.sustainability.action';
+  focusKeys: Array<
+    | 'servicesSection.cards.realEstate.focus.marketIntelligence'
+    | 'servicesSection.cards.realEstate.focus.acquisitionStructuring'
+    | 'servicesSection.cards.realEstate.focus.masterPlanning'
+    | 'servicesSection.cards.turnkey.focus.integratedDelivery'
+    | 'servicesSection.cards.turnkey.focus.detailSupervision'
+    | 'servicesSection.cards.turnkey.focus.onsiteQA'
+    | 'servicesSection.cards.renovations.focus.heritagePreservation'
+    | 'servicesSection.cards.renovations.focus.luxurySystems'
+    | 'servicesSection.cards.renovations.focus.materialRestoration'
+    | 'servicesSection.cards.sustainability.focus.netZeroStrategy'
+    | 'servicesSection.cards.sustainability.focus.esgAdvisory'
+    | 'servicesSection.cards.sustainability.focus.performanceAudits'
+  >;
   metrics: Array<{
-    label: string;
+    labelKey:
+      | 'servicesSection.cards.realEstate.metrics.pipelineValue'
+      | 'servicesSection.cards.realEstate.metrics.feasibilityConfidence'
+      | 'servicesSection.cards.realEstate.metrics.approvalVelocity'
+      | 'servicesSection.cards.turnkey.metrics.onTimeCompletion'
+      | 'servicesSection.cards.turnkey.metrics.defectRate'
+      | 'servicesSection.cards.turnkey.metrics.craftCompliance'
+      | 'servicesSection.cards.renovations.metrics.assetValueUplift'
+      | 'servicesSection.cards.renovations.metrics.energyOptimization'
+      | 'servicesSection.cards.renovations.metrics.ownerSatisfaction'
+      | 'servicesSection.cards.sustainability.metrics.carbonReduction'
+      | 'servicesSection.cards.sustainability.metrics.waterEfficiency'
+      | 'servicesSection.cards.sustainability.metrics.certificationSuccess';
     value: string;
     progress: number;
   }>;
-  Icon: React.ComponentType<{ className?: string }>;
+  Icon: LucideIcon;
 };
 
 const services: ServiceItem[] = [
   {
-    title: 'Real Estate Development',
-    description:
-      'Strategic land acquisition and visionary planning. We identify the pulse of high-growth markets to build lasting value.',
-    action: 'Discover',
-    focus: ['Market Intelligence', 'Acquisition Structuring', 'Master Planning'],
+    titleKey: 'servicesSection.cards.realEstate.title',
+    descriptionKey: 'servicesSection.cards.realEstate.description',
+    actionKey: 'servicesSection.cards.realEstate.action',
+    focusKeys: [
+      'servicesSection.cards.realEstate.focus.marketIntelligence',
+      'servicesSection.cards.realEstate.focus.acquisitionStructuring',
+      'servicesSection.cards.realEstate.focus.masterPlanning',
+    ],
     metrics: [
-      { label: 'Pipeline Value', value: '$240M', progress: 82 },
-      { label: 'Feasibility Confidence', value: '93%', progress: 93 },
-      { label: 'Approval Velocity', value: '4.1x', progress: 76 },
+      { labelKey: 'servicesSection.cards.realEstate.metrics.pipelineValue', value: '$240M', progress: 82 },
+      { labelKey: 'servicesSection.cards.realEstate.metrics.feasibilityConfidence', value: '93%', progress: 93 },
+      { labelKey: 'servicesSection.cards.realEstate.metrics.approvalVelocity', value: '4.1x', progress: 76 },
     ],
     Icon: Compass,
   },
   {
-    title: 'Turnkey Construction',
-    description:
-      'A seamless transition from blueprint to reality. Our master builders handle every structural nuance with surgical precision.',
-    action: 'Execute',
-    focus: ['Integrated Delivery', 'Detail Supervision', 'On-Site QA'],
+    titleKey: 'servicesSection.cards.turnkey.title',
+    descriptionKey: 'servicesSection.cards.turnkey.description',
+    actionKey: 'servicesSection.cards.turnkey.action',
+    focusKeys: [
+      'servicesSection.cards.turnkey.focus.integratedDelivery',
+      'servicesSection.cards.turnkey.focus.detailSupervision',
+      'servicesSection.cards.turnkey.focus.onsiteQA',
+    ],
     metrics: [
-      { label: 'On-Time Completion', value: '96%', progress: 96 },
-      { label: 'Defect Rate', value: '0.8%', progress: 88 },
-      { label: 'Craft Compliance', value: '98%', progress: 98 },
+      { labelKey: 'servicesSection.cards.turnkey.metrics.onTimeCompletion', value: '96%', progress: 96 },
+      { labelKey: 'servicesSection.cards.turnkey.metrics.defectRate', value: '0.8%', progress: 88 },
+      { labelKey: 'servicesSection.cards.turnkey.metrics.craftCompliance', value: '98%', progress: 98 },
     ],
     Icon: Building2,
   },
   {
-    title: 'Luxury Renovations',
-    description:
-      'Breathe new life into heritage estates. We blend historic preservation with cutting-edge smart home technology.',
-    action: 'Transform',
-    focus: ['Heritage Preservation', 'Luxury Systems', 'Material Restoration'],
+    titleKey: 'servicesSection.cards.renovations.title',
+    descriptionKey: 'servicesSection.cards.renovations.description',
+    actionKey: 'servicesSection.cards.renovations.action',
+    focusKeys: [
+      'servicesSection.cards.renovations.focus.heritagePreservation',
+      'servicesSection.cards.renovations.focus.luxurySystems',
+      'servicesSection.cards.renovations.focus.materialRestoration',
+    ],
     metrics: [
-      { label: 'Asset Value Uplift', value: '+34%', progress: 80 },
-      { label: 'Energy Optimization', value: '29%', progress: 72 },
-      { label: 'Owner Satisfaction', value: '99%', progress: 99 },
+      { labelKey: 'servicesSection.cards.renovations.metrics.assetValueUplift', value: '+34%', progress: 80 },
+      { labelKey: 'servicesSection.cards.renovations.metrics.energyOptimization', value: '29%', progress: 72 },
+      { labelKey: 'servicesSection.cards.renovations.metrics.ownerSatisfaction', value: '99%', progress: 99 },
     ],
     Icon: Sparkles,
   },
   {
-    title: 'Sustainable Consulting',
-    description:
-      'The future of luxury is ethical. LEED-certified methodologies paired with high-efficiency energy systems.',
-    action: 'Evolve',
-    focus: ['Net-Zero Strategy', 'ESG Advisory', 'Performance Audits'],
+    titleKey: 'servicesSection.cards.sustainability.title',
+    descriptionKey: 'servicesSection.cards.sustainability.description',
+    actionKey: 'servicesSection.cards.sustainability.action',
+    focusKeys: [
+      'servicesSection.cards.sustainability.focus.netZeroStrategy',
+      'servicesSection.cards.sustainability.focus.esgAdvisory',
+      'servicesSection.cards.sustainability.focus.performanceAudits',
+    ],
     metrics: [
-      { label: 'Carbon Reduction', value: '41%', progress: 84 },
-      { label: 'Water Efficiency', value: '37%', progress: 78 },
-      { label: 'Certification Success', value: '95%', progress: 95 },
+      { labelKey: 'servicesSection.cards.sustainability.metrics.carbonReduction', value: '41%', progress: 84 },
+      { labelKey: 'servicesSection.cards.sustainability.metrics.waterEfficiency', value: '37%', progress: 78 },
+      { labelKey: 'servicesSection.cards.sustainability.metrics.certificationSuccess', value: '95%', progress: 95 },
     ],
     Icon: Leaf,
   },
 ];
 
 function ServiceModal({ service }: { service: ServiceItem }) {
-  const { title, description, focus, metrics, Icon } = service;
+  const { t } = useI18n();
+  const { titleKey, descriptionKey, focusKeys, metrics, Icon } = service;
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <button className="mt-10 inline-flex items-center gap-3 text-[10px] font-medium tracking-[0.22em] text-[#D4AF37] uppercase">
-          {service.action}
+          {t(service.actionKey)}
           <ArrowRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1" />
         </button>
       </DialogTrigger>
@@ -102,29 +153,29 @@ function ServiceModal({ service }: { service: ServiceItem }) {
                 <div className="mb-5 inline-flex h-12 w-12 items-center justify-center border border-[#D4AF37]/45 bg-black/20 text-[#D4AF37]">
                   <Icon className="h-5 w-5" />
                 </div>
-                <DialogTitle className="text-4xl leading-[0.94] text-[#F4F0E5] sm:text-5xl lg:text-6xl">{title}</DialogTitle>
+                <DialogTitle className="text-4xl leading-[0.94] text-[#F4F0E5] sm:text-5xl lg:text-6xl">{t(titleKey)}</DialogTitle>
                 <DialogDescription className="mt-5 max-w-2xl text-base leading-8 text-[#BEB7A6]">
-                  {description}
+                  {t(descriptionKey)}
                 </DialogDescription>
               </DialogHeader>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {focus.map((item) => (
-                  <div key={item} className="flex items-center gap-3 border border-[#D4AF37]/18 bg-black/20 px-4 py-3 text-sm text-[#D5CEBD]">
+                {focusKeys.map((itemKey) => (
+                  <div key={itemKey} className="flex items-center gap-3 border border-[#D4AF37]/18 bg-black/20 px-4 py-3 text-sm text-[#D5CEBD]">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
-                    <span className="tracking-wide">{item}</span>
+                    <span className="tracking-wide">{t(itemKey)}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="p-7 sm:p-8 md:p-10 lg:p-12">
-              <p className="mb-6 text-[10px] tracking-[0.2em] text-[#D4AF37] uppercase">Infographics</p>
+              <p className="mb-6 text-[10px] tracking-[0.2em] text-[#D4AF37] uppercase">{t('servicesSection.modal.infographics')}</p>
               <div className="space-y-5">
                 {metrics.map((metric) => (
-                  <div key={metric.label} className="border border-[#D4AF37]/16 bg-black/25 p-4">
+                  <div key={metric.labelKey} className="border border-[#D4AF37]/16 bg-black/25 p-4">
                     <div className="mb-2 flex items-end justify-between gap-4">
-                      <p className="text-xs tracking-[0.08em] text-[#BBB4A3] uppercase">{metric.label}</p>
+                      <p className="text-xs tracking-[0.08em] text-[#BBB4A3] uppercase">{t(metric.labelKey)}</p>
                       <p className="text-2xl font-semibold text-[#E7CB7D]">{metric.value}</p>
                     </div>
                     <div className="h-1.5 overflow-hidden bg-white/10">
@@ -138,10 +189,9 @@ function ServiceModal({ service }: { service: ServiceItem }) {
               </div>
 
               <div className="mt-8 border border-[#D4AF37]/20 bg-black/30 p-5">
-                <p className="text-[10px] tracking-[0.18em] text-[#D4AF37] uppercase">Delivery Note</p>
+                <p className="text-[10px] tracking-[0.18em] text-[#D4AF37] uppercase">{t('servicesSection.modal.deliveryNoteTitle')}</p>
                 <p className="mt-3 text-sm leading-7 text-[#BEB7A6]">
-                  Every engagement is led by a principal team and tracked through milestone dashboards for complete
-                  transparency from concept to handover.
+                  {t('servicesSection.modal.deliveryNoteBody')}
                 </p>
               </div>
             </div>
@@ -153,17 +203,19 @@ function ServiceModal({ service }: { service: ServiceItem }) {
 }
 
 function ServicesIntro() {
+  const { t } = useI18n();
+
   return (
     <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-2">
       <div className="max-w-2xl">
-        <p className="mb-5 text-[10px] font-medium tracking-[0.24em] text-[#D4AF37] uppercase">Our Services</p>
+        <p className="mb-5 text-[10px] font-medium tracking-[0.24em] text-[#D4AF37] uppercase">{t('servicesSection.intro.eyebrow')}</p>
         <h2 className="text-5xl leading-[0.96] text-[#F5F2EA] sm:text-6xl lg:text-7xl">
-          Engineering Artistry
+          {t('servicesSection.intro.headingLine1')}
           <br />
-          <span className="italic">at Scale.</span>
+          <span className="italic">{t('servicesSection.intro.headingLine2')}</span>
         </h2>
         <p className="mt-6 max-w-xl text-base leading-8 text-[#BFB8A7]">
-          Luxus Transforms Raw Land into Sculptural Residences through Yacht-Inspired Engineering, Golden-Ratio Spatial Mastery, and Rare Italian Materials. Our Principals' 25+ years of Tuscan Luxury Expertise Create Permanent Waterfront Galleries Redefining Standards across the Americas.
+          {t('servicesSection.intro.description')}
         </p>
       </div>
 
@@ -185,11 +237,13 @@ function ServicesIntro() {
 }
 
 function ServicesCards() {
+  const { t } = useI18n();
+
   return (
     <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:mt-14 xl:grid-cols-4 xl:gap-0">
       {services.map((service, index) => (
         <article
-          key={service.title}
+          key={service.titleKey}
           className={`group relative overflow-hidden border border-[#D4AF37]/12 bg-[linear-gradient(160deg,#131313_0%,#0F0F10_55%,#0B0B0B_100%)] p-7 transition-all duration-700 hover:z-10 hover:border-[#D4AF37]/45 hover:shadow-[0_16px_45px_rgba(0,0,0,0.45)] xl:min-h-[460px] ${
             index === 0
               ? 'xl:-translate-y-6'
@@ -207,9 +261,9 @@ function ServicesCards() {
             <service.Icon className="h-4 w-4" />
           </div>
 
-          <h3 className="max-w-[10ch] text-[40px] leading-[0.98] text-[#F3EFE5] sm:text-[44px]">{service.title}</h3>
+          <h3 className="max-w-[10ch] text-[40px] leading-[0.98] text-[#F3EFE5] sm:text-[44px]">{t(service.titleKey)}</h3>
 
-          <p className="mt-6 max-w-[28ch] text-sm leading-7 text-[#AEA795]">{service.description}</p>
+          <p className="mt-6 max-w-[28ch] text-sm leading-7 text-[#AEA795]">{t(service.descriptionKey)}</p>
 
           <ServiceModal service={service} />
         </article>

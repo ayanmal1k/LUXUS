@@ -2,12 +2,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useI18n } from '@/components/i18n-provider';
 
-const allLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Portfolio', href: '/portfolio' },
+type NavbarKey = 'home' | 'about' | 'services' | 'portfolio';
+
+const navbarTranslationKeyByLink: Record<NavbarKey, 'navbar.home' | 'navbar.about' | 'navbar.services' | 'navbar.portfolio'> = {
+  home: 'navbar.home',
+  about: 'navbar.about',
+  services: 'navbar.services',
+  portfolio: 'navbar.portfolio',
+};
+
+const allLinks: Array<{ key: NavbarKey; href: string }> = [
+  { key: 'home', href: '/' },
+  { key: 'about', href: '/about' },
+  { key: 'services', href: '/#services' },
+  { key: 'portfolio', href: '/portfolio' },
 ];
 
 const leftLinks = allLinks.slice(0, 2);
@@ -20,6 +30,7 @@ function isHashLink(href: string) {
 export default function GlassmorphismNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 18);
@@ -62,7 +73,7 @@ export default function GlassmorphismNavbar() {
                   href={link.href}
                   className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
                 >
-                  {link.label}
+                  {t(navbarTranslationKeyByLink[link.key])}
                   <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
                 </a>
               ) : (
@@ -71,7 +82,7 @@ export default function GlassmorphismNavbar() {
                   href={link.href}
                   className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
                 >
-                  {link.label}
+                  {t(navbarTranslationKeyByLink[link.key])}
                   <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
                 </Link>
               )
@@ -101,7 +112,7 @@ export default function GlassmorphismNavbar() {
                   href={link.href}
                   className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
                 >
-                  {link.label}
+                  {t(navbarTranslationKeyByLink[link.key])}
                   <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
                 </a>
               ) : (
@@ -110,7 +121,7 @@ export default function GlassmorphismNavbar() {
                   href={link.href}
                   className="relative text-[11px] tracking-[0.26em] uppercase font-medium text-[#c9c2b4] hover:text-white transition-colors duration-300 group"
                 >
-                  {link.label}
+                  {t(navbarTranslationKeyByLink[link.key])}
                   <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
                 </Link>
               )
@@ -120,7 +131,7 @@ export default function GlassmorphismNavbar() {
               className="relative inline-flex items-center rounded-full border border-[#D4AF37]/40 px-5 py-2 text-[10px] tracking-[0.28em] uppercase font-semibold text-[#D4AF37] hover:text-[#0B0B0B] overflow-hidden transition-colors duration-400 group"
             >
               <span className="absolute inset-0 bg-[#D4AF37] translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out rounded-full" />
-              <span className="relative z-10">Contact Us</span>
+              <span className="relative z-10">{t('navbar.contactUs')}</span>
             </Link>
           </div>
 
@@ -178,7 +189,7 @@ export default function GlassmorphismNavbar() {
                     transition: `opacity 0.4s ${i * 55}ms, transform 0.4s ${i * 55}ms, color 0.3s`,
                   }}
                 >
-                  {link.label}
+                  {t(navbarTranslationKeyByLink[link.key])}
                 </a>
               ) : (
                 <Link
@@ -193,7 +204,7 @@ export default function GlassmorphismNavbar() {
                     transition: `opacity 0.4s ${i * 55}ms, transform 0.4s ${i * 55}ms, color 0.3s`,
                   }}
                 >
-                  {link.label}
+                  {t(navbarTranslationKeyByLink[link.key])}
                 </Link>
               )
             ))}
@@ -202,7 +213,7 @@ export default function GlassmorphismNavbar() {
               onClick={() => setMenuOpen(false)}
               className="mt-5 w-full text-center rounded-full border border-[#D4AF37]/50 py-3 text-[10px] tracking-[0.3em] uppercase font-semibold text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0B0B0B] transition-all duration-400"
             >
-              Contact Us
+              {t('navbar.contactUs')}
             </Link>
           </div>
         </div>

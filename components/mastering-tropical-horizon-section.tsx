@@ -1,8 +1,17 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useI18n } from '@/components/i18n-provider';
 
 export default function MasteringTropicalHorizonSection() {
+  const { t } = useI18n();
+
+  const stats = [
+    { value: '38+', label: t('architecturalVision.stats.projectsDelivered') },
+    { value: '12', label: t('architecturalVision.stats.countriesReached') },
+    { value: '100%', label: t('architecturalVision.stats.italianCertified') },
+  ];
+
   return (
     <section className="relative w-full py-32 bg-[#0B0B0B] overflow-hidden">
       {/* Top divider */}
@@ -42,7 +51,7 @@ export default function MasteringTropicalHorizonSection() {
               <div className="relative h-[520px] overflow-hidden">
                 <Image
                   src="/mastering bg.png"
-                  alt="Tropical Horizon Pool"
+                  alt={t('architecturalVision.imageAlt')}
                   fill
                   className="object-cover object-center grayscale group-hover:grayscale-0 scale-100 group-hover:scale-[1.06] transition-all duration-[1.4s] ease-out"
                   priority
@@ -69,14 +78,14 @@ export default function MasteringTropicalHorizonSection() {
                     style={{ boxShadow: '0 0 8px rgba(212,175,55,0.9)' }}
                   />
                   <span className="text-[#D4AF37] text-[9px] font-semibold tracking-[0.26em] uppercase">
-                    Ocean Reef Islands, Panama
+                    {t('architecturalVision.infoCard.location')}
                   </span>
                 </div>
                 <div className="text-[1.05rem] font-serif font-semibold text-white mb-2 leading-snug">
-                  The Alchemist Residences
+                  {t('architecturalVision.infoCard.title')}
                 </div>
                 <div className="text-[#8E877F] text-xs leading-[1.75]">
-                  A fusion of Italian marble and Panamanian sunlight — redefining coastal living with unprecedented artisanal finishings.
+                  {t('architecturalVision.infoCard.description')}
                 </div>
                 {/* Bottom gold line */}
                 <div className="mt-4 h-[1px] w-full bg-gradient-to-r from-[#D4AF37]/50 via-[#D4AF37]/20 to-transparent" />
@@ -96,7 +105,7 @@ export default function MasteringTropicalHorizonSection() {
             >
               <div className="h-[1px] w-10 bg-[#D4AF37]" />
               <span className="text-[#D4AF37] text-[11px] tracking-[0.32em] uppercase font-semibold">
-                Architectural Vision
+                {t('architecturalVision.eyebrow')}
               </span>
             </motion.div>
 
@@ -108,14 +117,14 @@ export default function MasteringTropicalHorizonSection() {
               viewport={{ once: true }}
               className="text-4xl sm:text-5xl lg:text-[3.6rem] font-serif font-bold leading-[1.06] text-[#F5F2EA]"
             >
-              From Yatching <br /> to{' '}
+              {t('architecturalVision.headingLine1')} <br />
               <span
                 style={{
                   color: '#D4AF37',
                   textShadow: '0 0 40px rgba(212,175,55,0.25), 0 8px 24px rgba(0,0,0,0.4)',
                 }}
               >
-                Living
+                {t('architecturalVision.headingLine2')}
               </span>
               
             </motion.h2>
@@ -137,7 +146,7 @@ export default function MasteringTropicalHorizonSection() {
               viewport={{ once: true }}
               className="text-[#BFB8A7] text-base leading-[1.9] font-light max-w-lg"
             >
-             Our Approach Adapts Superyacht Engineering to Residential Architecture. Marine-Grade Materials withstand Coastal Extremes, Structural Solutions Proven on 200-ft Vessels ensure Resilience, and Spatial Flow Mirrors the World's Finest onboard Design. Every Residence Seamlessly extends into Nature's Grandeur.
+              {t('architecturalVision.description')}
             </motion.p>
 
             {/* Stats row */}
@@ -148,11 +157,7 @@ export default function MasteringTropicalHorizonSection() {
               viewport={{ once: true }}
               className="flex gap-10 pt-2"
             >
-              {[
-                { value: '38+', label: 'Projects Delivered' },
-                { value: '12', label: 'Countries Reached' },
-                { value: '100%', label: 'Italian Certified' },
-              ].map((stat) => (
+              {stats.map((stat) => (
                 <div key={stat.label} className="flex flex-col gap-1">
                   <span
                     className="text-2xl font-serif font-bold"
@@ -177,7 +182,7 @@ export default function MasteringTropicalHorizonSection() {
               className="group/link inline-flex items-center gap-3 w-fit mt-2"
             >
               <span className="text-[#D4AF37] text-[11px] tracking-[0.3em] uppercase font-semibold group-hover/link:text-white transition-colors duration-300">
-                View Portfolio
+                {t('architecturalVision.cta')}
               </span>
               <div className="h-[1px] w-8 bg-[#D4AF37]/50 group-hover/link:w-16 group-hover/link:bg-white transition-all duration-500" />
             </motion.a>

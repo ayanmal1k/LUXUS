@@ -1,36 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
-const materials = [
-  {
-    name: 'Carrara Marble',
-    number: '01',
-    origin: 'Carrara, Tuscany — Italy',
-    image: '/carara marble.png',
-    description:
-      'Experience the timeless elegance of Carrara marble, renowned for its fine grain and bright veining, perfect for creating statement floors, walls, and accents.',
-    tag: 'Signature Collection',
-  },
-  {
-    name: 'Tuscan Travertine',
-    number: '02',
-    origin: 'Tivoli, Lazio — Italy',
-    image: '/Tuscan Travertine.png',
-    description:
-      'Immerse yourself in the warm textures of handcrafted Tuscan travertine, a geological masterpiece that tells a story of thousands of years.',
-    tag: 'Heritage Series',
-  },
-  {
-    name: 'Botticino Marble',
-    number: '03',
-    origin: 'Botticino, Lombardy — Italy',
-    image: '/Botticino Marble.png',
-    description:
-      'Discover the subtle luxury of Botticino marble, with its creamy tones and understated elegance, ideal for tropical settings.',
-    tag: 'Exclusive Reserve',
-  },
-];
+import { useI18n } from '@/components/i18n-provider';
 
 const containerVariants = {
   hidden: {},
@@ -50,6 +21,35 @@ const cardVariants = {
 };
 
 export default function PremiumMaterialSection() {
+  const { t } = useI18n();
+
+  const materials = [
+    {
+      name: t('premiumMaterialsSection.cards.carrara.name'),
+      number: '01',
+      origin: t('premiumMaterialsSection.cards.carrara.origin'),
+      image: '/carara marble.png',
+      description: t('premiumMaterialsSection.cards.carrara.description'),
+      tag: t('premiumMaterialsSection.cards.carrara.tag'),
+    },
+    {
+      name: t('premiumMaterialsSection.cards.tuscanTravertine.name'),
+      number: '02',
+      origin: t('premiumMaterialsSection.cards.tuscanTravertine.origin'),
+      image: '/Tuscan Travertine.png',
+      description: t('premiumMaterialsSection.cards.tuscanTravertine.description'),
+      tag: t('premiumMaterialsSection.cards.tuscanTravertine.tag'),
+    },
+    {
+      name: t('premiumMaterialsSection.cards.botticino.name'),
+      number: '03',
+      origin: t('premiumMaterialsSection.cards.botticino.origin'),
+      image: '/Botticino Marble.png',
+      description: t('premiumMaterialsSection.cards.botticino.description'),
+      tag: t('premiumMaterialsSection.cards.botticino.tag'),
+    },
+  ];
+
   return (
     <section className="relative w-full py-32 overflow-hidden bg-[#0B0B0B]">
       {/* Top divider line */}
@@ -88,7 +88,7 @@ export default function PremiumMaterialSection() {
           >
             <div className="h-[1px] w-10 bg-[#D4AF37]" />
             <span className="text-[#D4AF37] text-[11px] tracking-[0.32em] uppercase font-semibold">
-              Curated Selection
+              {t('premiumMaterialsSection.eyebrow')}
             </span>
           </motion.div>
 
@@ -100,14 +100,14 @@ export default function PremiumMaterialSection() {
             viewport={{ once: true }}
             className="text-5xl md:text-6xl lg:text-[5.2rem] font-serif font-bold leading-[1.02]"
           >
-            <span className="text-[#F8F6F0]">Our Premium </span>
+            <span className="text-[#F8F6F0]">{t('premiumMaterialsSection.headingLine1')} </span>
             <span
               style={{
                 color: '#D4AF37',
                 textShadow: '0 0 48px rgba(212,175,55,0.28), 0 10px 28px rgba(0,0,0,0.45)',
               }}
             >
-              Materials
+              {t('premiumMaterialsSection.headingLine2')}
             </span>
           </motion.h2>
 
@@ -119,8 +119,7 @@ export default function PremiumMaterialSection() {
             viewport={{ once: true }}
             className="max-w-2xl text-[#BFB8A7] text-lg leading-relaxed font-light"
           >
-            We bring you the finest Italian materials — each with a unique geological story and
-            unmatched artisanal quality, curated to elevate every space with timeless elegance.
+            {t('premiumMaterialsSection.description')}
           </motion.p>
 
           {/* Animated divider */}
@@ -223,12 +222,12 @@ export default function PremiumMaterialSection() {
           className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#D4AF37]/10 pt-8"
         >
           <span className="text-[#5A544D] text-xs tracking-[0.26em] uppercase font-medium">
-            Italian Craftsmanship · Since 1987
+            {t('premiumMaterialsSection.footer.craftsmanship')}
           </span>
           <div className="flex items-center gap-3">
-            <Image src="/icon.png" alt="Luxus icon" width={20} height={20} className="opacity-50" />
+            <Image src="/icon.png" alt={t('premiumMaterialsSection.footer.iconAlt')} width={20} height={20} className="opacity-50" />
             <span className="text-[#D4AF37]/55 text-[10px] tracking-[0.28em] uppercase font-medium">
-              Luxus Collection
+              {t('premiumMaterialsSection.footer.collectionLabel')}
             </span>
           </div>
         </motion.div>

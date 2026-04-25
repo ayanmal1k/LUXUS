@@ -5,6 +5,7 @@ import { I18nProvider } from '@/components/i18n-provider'
 import './globals.css'
 
 import GlassmorphismNavbar from '@/components/glassmorphism-navbar'
+import FloatingLanguageSelector from '@/components/floating-language-selector'
 
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
@@ -88,8 +89,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} font-sans antialiased`}>
-        <GlassmorphismNavbar />
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <GlassmorphismNavbar />
+          {children}
+          <FloatingLanguageSelector />
+        </I18nProvider>
         <Analytics />
       </body>
     </html>

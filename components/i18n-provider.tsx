@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 
 import {
   defaultLocale,
@@ -9,17 +9,17 @@ import {
   translations,
 } from '@/lib/i18n/translations';
 
-type TranslationKey =
-  | 'hero.explorationTag'
-  | 'hero.exploreHeritage'
-  | 'hero.headingLine1'
-  | 'hero.headingLine2'
-  | 'hero.description'
-  | 'hero.cta'
-  | 'hero.imageAlt'
-  | 'hero.stats.experience'
-  | 'hero.stats.projects'
-  | 'hero.stats.materials';
+type TranslationTree = typeof translations[Locale];
+
+type DotNotationKeys<T> = {
+  [K in keyof T & string]: T[K] extends Record<string, unknown>
+    ? `${K}.${DotNotationKeys<T[K]>}`
+    : K;
+}[keyof T & string];
+
+type TranslationKey = DotNotationKeys<TranslationTree>;
+
+const STORAGE_KEY = 'luxus-locale';
 
 type I18nContextType = {
   locale: Locale;
@@ -32,6 +32,12 @@ const I18nContext = createContext<I18nContextType | undefined>(undefined);
 function getInitialLocale(): Locale {
   if (typeof window === 'undefined') {
     return defaultLocale;
+  }
+
+  const storedLocale = localStorage.getItem(STORAGE_KEY);
+
+  if (storedLocale && locales.includes(storedLocale as Locale)) {
+    return storedLocale as Locale;
   }
 
   const browserLocale = navigator.language.slice(0, 2).toLowerCase();
@@ -63,6 +69,11 @@ function resolveTranslation(locale: Locale, key: TranslationKey): string {
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>(getInitialLocale);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, locale);
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   const contextValue = useMemo(
     () => ({
