@@ -6,6 +6,7 @@ import './globals.css'
 
 import GlassmorphismNavbar from '@/components/glassmorphism-navbar'
 import FloatingLanguageSelector from '@/components/floating-language-selector'
+import SimpleFooter from '@/components/simple-footer'
 import { defaultLocale } from '@/lib/i18n/translations'
 
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
@@ -93,6 +94,7 @@ export default function RootLayout({
         <I18nProvider initialLocale={defaultLocale}>
           <GlassmorphismNavbar />
           {children}
+          <SimpleFooter />
           <FloatingLanguageSelector />
         </I18nProvider>
         <Analytics />

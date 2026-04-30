@@ -27,6 +27,11 @@ type Messages = {
     portfolioContact: string;
     contactUs: string;
   };
+  footer: {
+    title: string;
+    socialTitle: string;
+    copyright: string;
+  };
   languageSelector: {
     label: string;
     ariaLabel: string;
@@ -296,6 +301,11 @@ export const translations: Record<Locale, Messages> = {
       portfolio: 'Portfolio',
       portfolioContact: 'Portfolio Inquiry',
       contactUs: 'Contact Us',
+    },
+    footer: {
+      title: 'Luxury Development & Construction',
+      socialTitle: 'Follow Us',
+      copyright: '© 2026 LUXUS. All rights reserved.',
     },
     languageSelector: {
       label: 'Language',
@@ -678,11 +688,16 @@ export const translations: Record<Locale, Messages> = {
     },
     navbar: {
       home: 'Home',
-      about: 'Chi Siamo',
+      about: 'Chi siamo',
       services: 'Servizi',
       portfolio: 'Portfolio',
       portfolioContact: 'Richiesta Portfolio',
       contactUs: 'Contattaci',
+    },
+    footer: {
+      title: 'Sviluppo e Costruzione di Lusso',
+      socialTitle: 'Seguici',
+      copyright: '© 2026 LUXUS. Tutti i diritti riservati.',
     },
     languageSelector: {
       label: 'Lingua',
@@ -851,10 +866,55 @@ export const translations: Record<Locale, Messages> = {
         },
       },
     },
+    aboutPage: {
+      eyebrow: 'La Genesi',
+      headingLine1: 'Dal marmo toscano',
+      headingLine2: 'agli orizzonti americani',
+      paragraphs: [
+        'La storia di Luxus nasce in Toscana, tra materie nobili e una tradizione costruttiva che da oltre 25 anni da forma a residenze di alta gamma.',
+        'A questa eredita si unisce una raffinata esperienza negli interni di superyacht, creando un linguaggio progettuale distintivo.',
+        'Ne nascono residenze pensate per durare nel tempo, dove proporzione, armonia e finiture artigianali si fondono in spazi senza tempo, affacciati sul mare e capaci di superare i canoni dell architettura tradizionale nelle Americhe.',
+      ],
+      quote: 'L eleganza e l unica bellezza che non sfiorisce mai.',
+      quoteAuthor: 'Audrey Hepburn',
+      principles: {
+        title: 'I nostri principi',
+        subtitle: 'di progetto',
+        items: {
+          sustainability: {
+            title: 'Sostenibilita',
+            description: 'Armonizziamo architettura e natura per creare residenze durature, pensate per il futuro.',
+          },
+          craftsmanship: {
+            title: 'Artigianalita italiana',
+            description: 'Ogni dettaglio racconta una cultura del fare, dalla scelta dei materiali alle finiture su misura.',
+          },
+          engineering: {
+            title: 'Ingegneria di precisione',
+            description: 'Applichiamo rigore tecnico e controllo costante per garantire performance, durata e qualita.',
+          },
+        },
+      },
+      leadership: {
+        eyebrow: 'Le firme del progetto',
+        heading: 'Le firme del progetto',
+        roles: {
+          chiefEngineer: 'Chief Engineer',
+          headIntl: 'Head of International Relations',
+          headConstruction: 'Head of Construction',
+          headInteriors: 'Head of Interiors',
+        },
+      },
+      cta: {
+        heading: 'Pronto a trasformare la tua visione in una residenza unica?',
+        viewCollection: 'Scopri la collezione',
+        scheduleTour: 'Prenota un tour privato',
+      },
+    },
     portfolioContactPage: {
       eyebrow: 'Il Nostro Portfolio',
-      title: 'Aggiornamento Portfolio',
-      description: 'Contattaci per una presentazione riservata dei nostri progetti in Italia e nelle Americhe.',
+      title: 'Portfolio in aggiornamento',
+      description: 'Portfolio in aggiornamento. Contattaci per una presentazione riservata dei nostri progetti in Italia e nelle Americhe',
       requestHeading: 'Richiedi una Presentazione',
       requestHighlight: 'Riservata',
       requestDescription: "Il nostro portfolio presenta residenze curate, spazi commerciali e ambienti ispirati al mare in Italia e Americhe. Compila il modulo per ricevere una panoramica dettagliata dei nostri progetti più recenti.",
@@ -892,11 +952,16 @@ export const translations: Record<Locale, Messages> = {
     },
     navbar: {
       home: 'Inicio',
-      about: 'Nosotros',
+      about: 'Sobre nosotros',
       services: 'Servicios',
       portfolio: 'Portafolio',
       portfolioContact: 'Consulta de Portafolio',
       contactUs: 'Contáctanos',
+    },
+    footer: {
+      title: 'Desarrollo y Construcción de Lujo',
+      socialTitle: 'Síguenos',
+      copyright: '© 2026 LUXUS. Todos los derechos reservados.',
     },
     languageSelector: {
       label: 'Idioma',
@@ -1044,8 +1109,8 @@ export const translations: Record<Locale, Messages> = {
     },
     portfolioContactPage: {
       eyebrow: 'Nuestro Portfolio',
-      title: 'Actualización del Portfolio',
-      description: 'Contáctanos para una presentación confidencial de nuestros proyectos en Italia y las Américas.',
+      title: 'Portfolio en actualización',
+      description: 'Portfolio en actualización. Contáctanos para una presentación confidencial de nuestros proyectos en Italia y las Américas.',
       requestHeading: 'Solicita una',
       requestHighlight: 'Presentación',
       requestDescription:
@@ -1062,6 +1127,51 @@ export const translations: Record<Locale, Messages> = {
         placeholders: { name: 'Tu nombre', email: 'tu@email.com', phone: '+1 (555) 000-0000', company: 'Tu empresa', message: 'Cuéntanos sobre tu proyecto...', projectType: 'Selecciona un tipo de proyecto' },
         submit: { sending: 'Enviando...', default: 'Solicitar Portfolio' },
         successMessage: '¡Gracias! Nos pondremos en contacto contigo pronto.',
+      },
+    },
+    aboutPage: {
+      eyebrow: 'La Génesis',
+      headingLine1: 'Del mármol toscano',
+      headingLine2: 'a los horizontes americanos',
+      paragraphs: [
+        'La historia de Luxus nace en Toscana, entre materias nobles y una tradición constructiva que desde hace más de 25 años da forma a residencias de alta gama.',
+        'A esta herencia se une una refinada experiencia en interiores de superyates, creando un lenguaje proyectual distintivo.',
+        'De ello nacen residencias pensadas para perdurar, donde proporción, armonía y acabados artesanales se funden en espacios intemporales con vistas al mar, capaces de superar los cánones de la arquitectura tradicional en las Américas.',
+      ],
+      quote: 'La elegancia es la única belleza que nunca se desvanece.',
+      quoteAuthor: 'Audrey Hepburn',
+      principles: {
+        title: 'Nuestros principios',
+        subtitle: 'de proyecto',
+        items: {
+          sustainability: {
+            title: 'Sostenibilidad',
+            description: 'Armonizamos arquitectura y naturaleza para crear residencias duraderas, diseñadas para el futuro.',
+          },
+          craftsmanship: {
+            title: 'Artesanía italiana',
+            description: 'Cada detalle expresa una cultura del hacer, desde la selección de materiales hasta los acabados a medida.',
+          },
+          engineering: {
+            title: 'Ingeniería de precisión',
+            description: 'Aplicamos rigor técnico y control constante para garantizar rendimiento, durabilidad y calidad.',
+          },
+        },
+      },
+      leadership: {
+        eyebrow: 'Las firmas del proyecto',
+        heading: 'Las firmas del proyecto',
+        roles: {
+          chiefEngineer: 'Chief Engineer',
+          headIntl: 'Head of International Relations',
+          headConstruction: 'Head of Construction',
+          headInteriors: 'Head of Interiors',
+        },
+      },
+      cta: {
+        heading: '¡Listo para transformar tu visión en una residencia única?',
+        viewCollection: 'Ver la colección',
+        scheduleTour: 'Agendar tour privado',
       },
     },
     testimonialsSection: {
