@@ -374,13 +374,13 @@ export const translations: Record<Locale, Messages> = {
   },
   it: {
     hero: {
-      explorationTag: 'Diventa parte di una nuova dimensione',
-      exploreHeritage: 'Esplora l eredita',
-      headingLine1: 'Lusso Italiano',
-      headingLine2: 'in Americas',
+      explorationTag: 'Scopri una nuova visione dell abitare',
+      exploreHeritage: 'Vivi l eccellenza',
+      headingLine1: 'Il lusso italiano',
+      headingLine2: 'nelle Americhe',
       description:
-        "Dall'eccellenza italiana nell'edilizia residenziale e negli interni di yacht nasce una nuova dimensione del vivere di lusso.",
-      cta: 'Scopri l eccellenza',
+        "Dall'eccellenza italiana nella costruzione residenziale e negli interni di yacht nasce una nuova dimensione dell abitare di lusso.",
+      cta: 'Vivi l eccellenza',
       imageAlt: "Edifici di lusso con riflesso sull'acqua",
       stats: {
         experience: 'Anni di esperienza',
@@ -404,18 +404,18 @@ export const translations: Record<Locale, Messages> = {
       es: 'Spagnolo',
     },
     architecturalVision: {
-      imageAlt: 'Piscina Tropical Horizon',
+      imageAlt: 'Marina di Pisa - Italia / Villa Aurea',
       infoCard: {
-        location: 'Ocean Reef Islands, Panama',
-        title: 'The Alchemist Residences',
+        location: 'Marina di Pisa - Italia',
+        title: 'Villa Aurea',
         description:
-          'Una fusione di marmo italiano e luce panamense che ridefinisce la vita costiera con finiture artigianali senza precedenti.',
+          'Una fusione di marmo italiano e luce mediterranea che ridefinisce l abitare costiero, attraverso finiture artigianali senza precedenti.',
       },
-      eyebrow: 'Visione Architettonica',
+      eyebrow: 'La Visione',
       headingLine1: 'Dallo Yachting',
       headingLine2: 'all Abitare',
       description:
-        "Il nostro approccio adatta l'ingegneria dei superyacht all'architettura residenziale. Materiali di grado marino resistono agli estremi costieri, soluzioni strutturali collaudate su imbarcazioni di 200 piedi garantiscono resilienza e il flusso spaziale riflette il miglior design di bordo al mondo. Ogni residenza si estende armoniosamente nella grandezza della natura.",
+        'Il nostro approccio nasce in Toscana, dall incontro tra due filiere d eccellenza del Made in Italy: lo yachting di alta gamma e le costruzioni. Con Luxus portiamo nelle Americhe questo patrimonio progettuale e costruttivo, trasferendo nell architettura residenziale gli standard, i materiali e il know-how sviluppati nel mondo dei superyacht. Materiali pensati per l ambiente marino garantiscono resistenza anche nelle condizioni costiere più estreme; tecniche costruttive derivate dalla nautica assicurano durabilità e precisione; mentre il design degli spazi, ispirato ai migliori yacht al mondo, unisce funzionalità ed eleganza. Il risultato è un architettura residenziale che interpreta il lusso italiano in chiave contemporanea, creando residenze capaci di integrarsi armoniosamente con la forza e la bellezza della natura circostante.',
       stats: {
         projectsDelivered: 'Progetti Consegnati',
         countriesReached: 'Paesi Raggiunti',
@@ -425,11 +425,11 @@ export const translations: Record<Locale, Messages> = {
     },
     servicesSection: {
       intro: {
-        eyebrow: 'I Nostri Servizi',
-        headingLine1: 'Arte Ingegneristica',
-        headingLine2: 'su Larga Scala.',
+        eyebrow: 'I nostri servizi',
+        headingLine1: 'Lusso italiano,',
+        headingLine2: 'su misura, nelle Americhe.',
         description:
-          "Luxus trasforma terreni grezzi in residenze scultoree attraverso ingegneria ispirata agli yacht, maestria spaziale basata sulla sezione aurea e rari materiali italiani. I nostri principal, con oltre 25 anni di esperienza nel lusso toscano, creano gallerie permanenti sul lungomare che ridefiniscono gli standard nelle Americhe.",
+          'Luxus interpreta il lusso italiano attraverso un approccio esclusivo e su misura. Ogni progetto nasce da una visione integrata che unisce estetica, materiali d eccellenza e cura assoluta del dettaglio, trasformando ogni residenza in un esperienza unica e senza tempo.',
       },
       cards: {
         realEstate: {
@@ -505,7 +505,7 @@ export const translations: Record<Locale, Messages> = {
       },
     },
     premiumMaterialsSection: {
-      eyebrow: 'Selezione Curata',
+      eyebrow: 'I Nostri Materiali Premium',
       headingLine1: 'I Nostri Materiali',
       headingLine2: 'Premium',
       description:
@@ -538,20 +538,20 @@ export const translations: Record<Locale, Messages> = {
         iconAlt: 'Icona Luxus',
         collectionLabel: 'Collezione Luxus',
       },
-      catalogButton: 'Richiedi il nostro catalogo completo dei materiali',
+      catalogButton: 'Richiedi il catalogo completo dei nostri Materiali',
     },
     testimonialsSection: {
-      heading: 'Luxus Experiences',
+      heading: 'Esperienze Luxus',
       items: {
         first: {
           quote:
-            'Proprietaria Penthouse, Ocean Reef Punta Paitilla',
+            'Il livello di dettaglio nella lavorazione della pietra non ha eguali in America Centrale. Sembra davvero un frammento del Lago di Como a Panama.',
           name: 'Alessandra Rossi',
-          role: '',
+          role: 'Proprietaria Penthouse, Ocean Reef Punta Paitilla',
         },
         second: {
           quote:
-            'Lavorare con Luxus è un esperienza cinematografica. La loro visione dello sviluppo urbano ha ridefinito ciò che mi aspetto dal lusso.',
+            'Lavorare con Luxus è un esperienza cinematografica. La loro visione dello sviluppo urbano ridefinisce ciò che ti aspetti dal lusso.',
           name: 'Luca Piva',
           role: 'CEO Four Walls Realty Corp',
         },
@@ -566,13 +566,13 @@ export const translations: Record<Locale, Messages> = {
   },
   es: {
     hero: {
-      explorationTag: 'Conviértete en parte de una nueva dimensión',
-      exploreHeritage: 'Explora la herencia',
-      headingLine1: 'Lujo Italiano',
-      headingLine2: 'en Americas',
+      explorationTag: 'Descubre una nueva visión del habitar',
+      exploreHeritage: 'Experimenta la excelencia',
+      headingLine1: 'El lujo italiano',
+      headingLine2: 'en las Américas',
       description:
-        'Desde la excelencia italiana en construcción residencial e interiores de yates surge una nueva dimensión de vida de lujo.',
-      cta: 'Descubrir la excelencia',
+        'De la excelencia italiana en construcción residencial e interiores de yates nace una nueva dimensión del habitar de lujo.',
+      cta: 'Experimenta la excelencia',
       imageAlt: 'Edificios de lujo con reflejo en el agua',
       stats: {
         experience: 'Anos de experiencia',
@@ -596,18 +596,18 @@ export const translations: Record<Locale, Messages> = {
       es: 'Español',
     },
     architecturalVision: {
-      imageAlt: 'Piscina Tropical Horizon',
+      imageAlt: 'Marina di Pisa - Italia / Villa Aurea',
       infoCard: {
-        location: 'Ocean Reef Islands, Panama',
-        title: 'The Alchemist Residences',
+        location: 'Marina di Pisa – Italia',
+        title: 'Villa Aurea',
         description:
-          'Una fusión de mármol italiano y luz panameña que redefine la vida costera con acabados artesanales sin precedentes.',
+          'Una fusión de mármol italiano y luz mediterránea que redefine el habitar costero a través de acabados artesanales sin precedentes.',
       },
-      eyebrow: 'Visión Arquitectónica',
+      eyebrow: 'La Visión',
       headingLine1: 'Del Yachting',
       headingLine2: 'al Habitar',
       description:
-        'Nuestro enfoque adapta la ingeniería de superyates a la arquitectura residencial. Materiales de grado marino resisten extremos costeros, soluciones estructurales probadas en embarcaciones de 200 pies aseguran resiliencia y el flujo espacial refleja el mejor diseño a bordo del mundo. Cada residencia se integra de forma natural con la grandeza del entorno.',
+        'Nuestro enfoque nace en Toscana, del encuentro entre dos pilares de excelencia del Made in Italy: el yachting de alta gama y la construcción. Con Luxus llevamos a las Américas este patrimonio proyectual y constructivo, trasladando a la arquitectura residencial los estándares, materiales y know-how desarrollados en el mundo de los superyates. Materiales diseñados para el entorno marino garantizan resistencia incluso en las condiciones costeras más extremas; técnicas constructivas derivadas de la náutica aseguran durabilidad y precisión; mientras que el diseño de los espacios, inspirado en los mejores yates del mundo, une funcionalidad y elegancia. El resultado es una arquitectura residencial que interpreta el lujo italiano en clave contemporánea, creando residencias capaces de integrarse armónicamente con la fuerza y belleza de la naturaleza circundante.',
       stats: {
         projectsDelivered: 'Proyectos Entregados',
         countriesReached: 'Países Alcanzados',
@@ -618,10 +618,10 @@ export const translations: Record<Locale, Messages> = {
     servicesSection: {
       intro: {
         eyebrow: 'Nuestros Servicios',
-        headingLine1: 'Ingenieria Artistica',
-        headingLine2: 'a Gran Escala.',
+        headingLine1: 'Lujo italiano,',
+        headingLine2: 'a medida, en las Américas.',
         description:
-          'Luxus transforma terrenos en bruto en residencias escultoricas mediante ingenieria inspirada en yates, dominio espacial de proporcion aurea y materiales italianos exclusivos. Nuestros directores, con mas de 25 anos de experiencia en lujo toscano, crean galerias permanentes frente al mar que redefinen los estandares en las Americas.',
+          'Luxus interpreta el lujo italiano a través de un enfoque exclusivo y a medida. Cada proyecto surge de una visión integrada que une estética, materiales de excelencia y cuidado absoluto del detalle, transformando cada residencia en una experiencia única e intemporal.',
       },
       cards: {
         realEstate: {
@@ -697,11 +697,11 @@ export const translations: Record<Locale, Messages> = {
       },
     },
     premiumMaterialsSection: {
-      eyebrow: 'Seleccion Curada',
+      eyebrow: 'Nuestros Materiales Premium',
       headingLine1: 'Nuestros Materiales',
       headingLine2: 'Premium',
       description:
-        'Te presentamos los mejores materiales italianos, cada uno con una historia geologica unica y calidad artesanal incomparable, seleccionados para elevar cada espacio con elegancia atemporal.',
+        'Te ofrecemos los mejores materiales italianos, cada uno con una historia geológica única y una calidad artesanal inigualable, seleccionados para elevar cada espacio con elegancia atemporal.',
       cards: {
         carrara: {
           name: 'Marmol de Carrara',
@@ -730,28 +730,28 @@ export const translations: Record<Locale, Messages> = {
         iconAlt: 'Icono Luxus',
         collectionLabel: 'Coleccion Luxus',
       },
-      catalogButton: 'Solicita nuestro catalogo completo de materiales',
+      catalogButton: 'Solicita nuestro catálogo completo de Materiales',
     },
     testimonialsSection: {
-      heading: 'El Estilo de Vida Luxus',
+      heading: 'Experiencias Luxus',
       items: {
         first: {
           quote:
             'El nivel de detalle en la piedra no tiene comparacion en Centroamerica. Realmente se siente como un pedazo del Lago de Como en Panama.',
           name: 'Alessandra Rossi',
-          role: 'Propietaria de Penthouse, Ocean Reef',
+          role: 'Propietaria Penthouse, Ocean Reef Punta Paitilla',
         },
         second: {
           quote:
-            'Trabajar con Luxus fue una experiencia cinematografica. Su vision del desarrollo urbano redefinio lo que esperaba del lujo.',
-          name: 'Julian Varela',
-          role: 'CEO, Pan-Global Dev',
+            'Trabajar con Luxus es una experiencia cinematográfica. Su visión del desarrollo urbano redefine lo que esperas del lujo.',
+          name: 'Luca Piva',
+          role: 'CEO Four Walls Realty Corp',
         },
         third: {
           quote:
-            'Desde los primeros planos hasta el toque final de la manija, la artesania italiana se percibe en cada rincon.',
-          name: 'Elena Castillo',
-          role: 'Inversionista Privada',
+            'En Luxus encontré un socio capaz de transformar la excelencia italiana en arquitectura concreta, con un nivel de detalle y control que marca la diferencia en los proyectos más ambiciosos.',
+          name: 'Andrea Melillo',
+          role: 'CEO Melillo Group',
         },
       },
     },

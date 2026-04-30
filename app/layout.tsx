@@ -6,6 +6,7 @@ import './globals.css'
 
 import GlassmorphismNavbar from '@/components/glassmorphism-navbar'
 import FloatingLanguageSelector from '@/components/floating-language-selector'
+import { defaultLocale } from '@/lib/i18n/translations'
 
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
@@ -87,9 +88,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang={defaultLocale}>
       <body className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} font-sans antialiased`}>
-        <I18nProvider>
+        <I18nProvider initialLocale={defaultLocale}>
           <GlassmorphismNavbar />
           {children}
           <FloatingLanguageSelector />

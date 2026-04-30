@@ -27,27 +27,12 @@ type I18nContextType = {
   t: (key: TranslationKey) => string;
 };
 
+type I18nProviderProps = {
+  children: ReactNode;
+  initialLocale: Locale;
+};
+
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
-
-function getInitialLocale(): Locale {
-  if (typeof window === 'undefined') {
-    return defaultLocale;
-  }
-
-  const storedLocale = localStorage.getItem(STORAGE_KEY);
-
-  if (storedLocale && locales.includes(storedLocale as Locale)) {
-    return storedLocale as Locale;
-  }
-
-  const browserLocale = navigator.language.slice(0, 2).toLowerCase();
-
-  if (locales.includes(browserLocale as Locale)) {
-    return browserLocale as Locale;
-  }
-
-  return defaultLocale;
-}
 
 function resolveTranslation(locale: Locale, key: TranslationKey): string {
   const value = key
@@ -67,8 +52,19 @@ function resolveTranslation(locale: Locale, key: TranslationKey): string {
   return key;
 }
 
-export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>(getInitialLocale);
+export function I18nProvider({ children, initialLocale }: I18nProviderProps) {
+  const [locale, setLocale] = useState<Locale>(initialLocale);
+
+  useEffect(() => {
+    const storedLocale = localStorage.getItem(STORAGE_KEY);
+
+    if (storedLocale && locales.includes(storedLocale as Locale) && storedLocale !== locale) {
+      setLocale(storedLocale as Locale);
+      return;
+    }
+
+    localStorage.setItem(STORAGE_KEY, locale);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, locale);
