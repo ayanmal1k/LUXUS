@@ -1,10 +1,13 @@
-'use client';
+"use client";
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
+import { useI18n } from '@/components/i18n-provider';
+import { translations } from '@/lib/i18n/translations';
 
 export default function PortfolioContactPage() {
+  const { t, locale } = useI18n();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -53,15 +56,9 @@ export default function PortfolioContactPage() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-center"
           >
-            <p className="mb-6 text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
-              Our Portfolio
-            </p>
-            <h1 className="mx-auto max-w-3xl text-5xl leading-tight text-[#F6F3EA] sm:text-6xl lg:text-7xl">
-              Portfolio Updating
-            </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-[#BEB8A7] sm:text-xl">
-              Contact us for a confidential presentation of our projects in Italy and the Americas.
-            </p>
+            <p className="mb-6 text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">{t('portfolioContactPage.eyebrow')}</p>
+            <h1 className="mx-auto max-w-3xl text-5xl leading-tight text-[#F6F3EA] sm:text-6xl lg:text-7xl">{t('portfolioContactPage.title')}</h1>
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-[#BEB8A7] sm:text-xl">{t('portfolioContactPage.description')}</p>
           </motion.div>
         </div>
       </section>
@@ -78,15 +75,11 @@ export default function PortfolioContactPage() {
               viewport={{ once: true }}
               className="flex flex-col justify-center"
             >
-              <h2 className="text-4xl leading-tight text-[#F5F2EA] sm:text-5xl">
-                Request a Confidential <span className="text-[#D4AF37]">Presentation</span>
-              </h2>
-              <p className="mt-6 text-lg leading-8 text-[#BEB8A7]">
-                Our portfolio showcases carefully crafted residences, commercial spaces, and marine-inspired environments across Italy and the Americas. Fill out the form to receive a detailed overview of our most recent projects.
-              </p>
+              <h2 className="text-4xl leading-tight text-[#F5F2EA] sm:text-5xl">{t('portfolioContactPage.requestHeading')} <span className="text-[#D4AF37]">{t('portfolioContactPage.requestHighlight')}</span></h2>
+              <p className="mt-6 text-lg leading-8 text-[#BEB8A7]">{t('portfolioContactPage.requestDescription')}</p>
 
               <div className="mt-10 space-y-4">
-                {['25+ years of luxury expertise', 'Italian craftsmanship & design', 'Bespoke project solutions', 'Confidential portfolio access'].map((item, i) => (
+                {translations[locale].portfolioContactPage.benefits.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="mt-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10">
                       <Check className="h-3 w-3 text-[#D4AF37]" />
@@ -111,9 +104,9 @@ export default function PortfolioContactPage() {
                 <div className="space-y-5">
                   {/* Full Name */}
                   <div>
-                    <label className="block text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
-                      Full Name
-                    </label>
+                      <label className="block text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
+                        {t('portfolioContactPage.form.fullName')}
+                      </label>
                     <input
                       type="text"
                       name="fullName"
@@ -121,14 +114,14 @@ export default function PortfolioContactPage() {
                       onChange={handleChange}
                       required
                       className="mt-2 w-full border border-[#D4AF37]/20 bg-[#070707] px-4 py-3 text-[#F6F3EA] placeholder-[#5A544D] transition-colors duration-300 focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30"
-                      placeholder="Your name"
+                      placeholder={translations[locale].portfolioContactPage.form.placeholders.name}
                     />
                   </div>
 
                   {/* Email */}
                   <div>
                     <label className="block text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
-                      Email
+                      {t('portfolioContactPage.form.email')}
                     </label>
                     <input
                       type="email"
@@ -137,14 +130,14 @@ export default function PortfolioContactPage() {
                       onChange={handleChange}
                       required
                       className="mt-2 w-full border border-[#D4AF37]/20 bg-[#070707] px-4 py-3 text-[#F6F3EA] placeholder-[#5A544D] transition-colors duration-300 focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30"
-                      placeholder="your@email.com"
+                      placeholder={translations[locale].portfolioContactPage.form.placeholders.email}
                     />
                   </div>
 
                   {/* Phone */}
                   <div>
                     <label className="block text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
-                      Phone
+                      {t('portfolioContactPage.form.phone')}
                     </label>
                     <input
                       type="tel"
@@ -152,14 +145,14 @@ export default function PortfolioContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="mt-2 w-full border border-[#D4AF37]/20 bg-[#070707] px-4 py-3 text-[#F6F3EA] placeholder-[#5A544D] transition-colors duration-300 focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder={translations[locale].portfolioContactPage.form.placeholders.phone}
                     />
                   </div>
 
                   {/* Company */}
                   <div>
                     <label className="block text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
-                      Company
+                      {t('portfolioContactPage.form.company')}
                     </label>
                     <input
                       type="text"
@@ -167,14 +160,14 @@ export default function PortfolioContactPage() {
                       value={formData.company}
                       onChange={handleChange}
                       className="mt-2 w-full border border-[#D4AF37]/20 bg-[#070707] px-4 py-3 text-[#F6F3EA] placeholder-[#5A544D] transition-colors duration-300 focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30"
-                      placeholder="Your company"
+                      placeholder={translations[locale].portfolioContactPage.form.placeholders.company}
                     />
                   </div>
 
                   {/* Project Type */}
                   <div>
                     <label className="block text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
-                      Project Type
+                      {t('portfolioContactPage.form.projectType')}
                     </label>
                     <select
                       name="projectType"
@@ -184,20 +177,20 @@ export default function PortfolioContactPage() {
                       className="mt-2 w-full border border-[#D4AF37]/20 bg-[#070707] px-4 py-3 text-[#F6F3EA] placeholder-[#5A544D] transition-colors duration-300 focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30"
                     >
                       <option value="" disabled>
-                        Select a project type
+                        {translations[locale].portfolioContactPage.form.placeholders.projectType}
                       </option>
-                      <option value="residential">Residential</option>
-                      <option value="commercial">Commercial</option>
-                      <option value="marine">Marine</option>
-                      <option value="mixed">Mixed-Use</option>
-                      <option value="other">Other</option>
+                      <option value="residential">{t('portfolioContactPage.form.projectTypeOptions.residential')}</option>
+                      <option value="commercial">{t('portfolioContactPage.form.projectTypeOptions.commercial')}</option>
+                      <option value="marine">{t('portfolioContactPage.form.projectTypeOptions.marine')}</option>
+                      <option value="mixed">{t('portfolioContactPage.form.projectTypeOptions.mixed')}</option>
+                      <option value="other">{t('portfolioContactPage.form.projectTypeOptions.other')}</option>
                     </select>
                   </div>
 
                   {/* Message */}
                   <div>
                     <label className="block text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase">
-                      Message
+                      {t('portfolioContactPage.form.message')}
                     </label>
                     <textarea
                       name="message"
@@ -205,7 +198,7 @@ export default function PortfolioContactPage() {
                       onChange={handleChange}
                       rows={4}
                       className="mt-2 w-full border border-[#D4AF37]/20 bg-[#070707] px-4 py-3 text-[#F6F3EA] placeholder-[#5A544D] transition-colors duration-300 focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30"
-                      placeholder="Tell us about your project..."
+                      placeholder={translations[locale].portfolioContactPage.form.placeholders.message}
                     />
                   </div>
                 </div>
@@ -216,11 +209,11 @@ export default function PortfolioContactPage() {
                   disabled={isLoading}
                   className="mt-8 w-full border border-[#D4AF37] bg-[#D4AF37] px-6 py-3 text-[11px] font-medium tracking-[0.18em] text-[#0D0D0D] uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E0BF58] disabled:opacity-50 disabled:hover:translate-y-0"
                 >
-                  {isLoading ? 'Sending...' : 'Request Portfolio'}
+                  {isLoading ? t('portfolioContactPage.form.sending') : t('portfolioContactPage.form.submit')}
                 </button>
 
                 {/* Success Message */}
-                {isSubmitted && (
+                  {isSubmitted && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -228,7 +221,7 @@ export default function PortfolioContactPage() {
                     className="mt-4 flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3"
                   >
                     <Check className="h-4 w-4 text-green-400" />
-                    <span className="text-sm text-green-300">Thank you! We'll be in touch shortly.</span>
+                    <span className="text-sm text-green-300">{t('portfolioContactPage.form.successMessage')}</span>
                   </motion.div>
                 )}
               </form>

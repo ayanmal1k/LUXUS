@@ -9,15 +9,9 @@ import {
   translations,
 } from '@/lib/i18n/translations';
 
-type TranslationTree = typeof translations[Locale];
-
-type DotNotationKeys<T> = {
-  [K in keyof T & string]: T[K] extends Record<string, unknown>
-    ? `${K}.${DotNotationKeys<T[K]>}`
-    : K;
-}[keyof T & string];
-
-type TranslationKey = DotNotationKeys<TranslationTree>;
+// Use a simple string key for translations to avoid brittle
+// compile-time dot-notation generation when locales are optional.
+type TranslationKey = string;
 
 const STORAGE_KEY = 'luxus-locale';
 
@@ -34,7 +28,7 @@ type I18nProviderProps = {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
-function resolveTranslation(locale: Locale, key: TranslationKey): string {
+function resolveTranslation(locale: Locale, key: string): string {
   const value = key
     .split('.')
     .reduce<unknown>(
@@ -75,7 +69,7 @@ export function I18nProvider({ children, initialLocale }: I18nProviderProps) {
     () => ({
       locale,
       setLocale,
-      t: (key: TranslationKey) => resolveTranslation(locale, key),
+      t: (key: string) => resolveTranslation(locale, key),
     }),
     [locale],
   );

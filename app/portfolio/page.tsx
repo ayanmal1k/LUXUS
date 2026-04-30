@@ -15,6 +15,8 @@ import {
   Play,
   SquareStack,
 } from 'lucide-react';
+import { useI18n } from '@/components/i18n-provider';
+import { translations } from '@/lib/i18n/translations';
 import {
   Carousel,
   CarouselContent,
@@ -57,6 +59,7 @@ type Project = {
   timelapse: string;
   stats: Array<{ label: string; value: string }>;
   features: string[];
+  _labels?: Partial<Record<string, string>>;
 };
 
 type CaseStudy = {
@@ -247,6 +250,8 @@ function ProjectModal({
     setPanoramaOpen(false);
   }, [project.slug]);
 
+  const { t } = useI18n();
+
   return (
     <>
       <Dialog open onOpenChange={(open) => !open && onClose()}>
@@ -274,7 +279,7 @@ function ProjectModal({
             <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
               <div className="border-b border-[#D4AF37]/12 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
                 <DialogHeader className="text-left">
-                  <p className="text-[10px] tracking-[0.24em] text-[#D4AF37] uppercase">Project Overview</p>
+                  <p className="text-[10px] tracking-[0.24em] text-[#D4AF37] uppercase">{project._labels?.projectOverview ?? t('portfolioPage.modal.projectOverview')}</p>
                   <DialogTitle className="mt-3 text-3xl text-[#F5F2EA] sm:text-4xl">{project.subtitle}</DialogTitle>
                   <DialogDescription className="mt-5 max-w-2xl text-base leading-8 text-[#C1BAAA]">
                     {project.overview}
@@ -316,7 +321,7 @@ function ProjectModal({
               <div className="p-6 sm:p-8 lg:p-10">
                 <div className="flex items-center gap-3 text-[#D4AF37]">
                   <GalleryHorizontal className="h-4 w-4" />
-                  <p className="text-[10px] tracking-[0.24em] uppercase">Image Carousel</p>
+                  <p className="text-[10px] tracking-[0.24em] uppercase">{project._labels?.imageCarousel ?? t('portfolioPage.modal.imageCarousel')}</p>
                 </div>
 
                 <div className="mt-5">
@@ -338,7 +343,7 @@ function ProjectModal({
                 <div className="mt-8 grid gap-4">
                   <div className="flex items-center gap-3 text-[#D4AF37]">
                     <Compass className="h-4 w-4" />
-                    <p className="text-[10px] tracking-[0.24em] uppercase">360 Panorama Viewer</p>
+                    <p className="text-[10px] tracking-[0.24em] uppercase">{t('portfolioPage.modal.view360')}</p>
                   </div>
                   <div className="rounded-2xl border border-[#D4AF37]/14 bg-black/20 p-4">
                     <div className="relative aspect-[16/8] overflow-hidden rounded-xl border border-[#D4AF37]/15">
@@ -356,17 +361,17 @@ function ProjectModal({
                         className="absolute left-4 bottom-4 inline-flex items-center gap-2 border border-[#D4AF37]/45 bg-black/60 px-4 py-2 text-[10px] tracking-[0.22em] text-[#E7CB7D] uppercase backdrop-blur-sm transition-all duration-500 hover:border-[#D4AF37] hover:text-[#F5F2EA]"
                       >
                         <Maximize2 className="h-3.5 w-3.5" />
-                        View 360
+                        {project._labels?.view360 ?? t('portfolioPage.modal.view360')}
                       </button>
                     </div>
-                    <p className="mt-3 text-[10px] tracking-[0.2em] text-[#8F897C] uppercase">Open modal and drag horizontally to look around</p>
+                    <p className="mt-3 text-[10px] tracking-[0.2em] text-[#8F897C] uppercase">{t('portfolioPage.modal.view360')}</p>
                   </div>
                 </div>
 
                 <div className="mt-8 grid gap-4">
                   <div className="flex items-center gap-3 text-[#D4AF37]">
                     <Play className="h-4 w-4" />
-                    <p className="text-[10px] tracking-[0.24em] uppercase">Timelapse Video</p>
+                    <p className="text-[10px] tracking-[0.24em] uppercase">{t('portfolioPage.modal.imageCarousel')}</p>
                   </div>
                   <div className="overflow-hidden border border-[#D4AF37]/14 bg-black/20">
                     <video className="h-[250px] w-full object-cover" autoPlay muted loop playsInline preload="metadata">
@@ -378,7 +383,7 @@ function ProjectModal({
                 <div className="mt-8 grid gap-4">
                   <div className="flex items-center gap-3 text-[#D4AF37]">
                     <Layers3 className="h-4 w-4" />
-                    <p className="text-[10px] tracking-[0.24em] uppercase">Floor Plans</p>
+                    <p className="text-[10px] tracking-[0.24em] uppercase">{t('portfolioPage.modal.outcomeStat')}</p>
                   </div>
                   <button
                     type="button"
@@ -393,8 +398,8 @@ function ProjectModal({
                           <Expand className="h-4 w-4" />
                         </span>
                         <div>
-                          <p className="text-[10px] tracking-[0.24em] text-[#D4AF37] uppercase">Tap to zoom</p>
-                          <p className="text-sm text-[#F5F2EA]">Open lightbox floor plan</p>
+                          <p className="text-[10px] tracking-[0.24em] text-[#D4AF37] uppercase">{t('portfolioPage.modal.tapToZoom')}</p>
+                          <p className="text-sm text-[#F5F2EA]">{t('portfolioPage.modal.openLightbox')}</p>
                         </div>
                       </div>
                     </div>
@@ -448,13 +453,45 @@ function ProjectModal({
 }
 
 export default function PortfolioPage() {
+  const { t, locale } = useI18n();
+  const localizedProjects = projects.map((p) => {
+    const trans = (translations as any)[locale].portfolioPage.projects[p.slug] as any | undefined;
+    return {
+      ...p,
+      title: trans?.title ?? p.title,
+      subtitle: trans?.subtitle ?? p.subtitle,
+      location: trans?.location ?? p.location,
+      size: trans?.size ?? p.size,
+      year: trans?.year ?? p.year,
+      materials: trans?.materials ?? p.materials,
+      overview: trans?.overview ?? p.overview,
+      challenge: trans?.challenge ?? p.challenge,
+      solution: trans?.solution ?? p.solution,
+      result: trans?.result ?? p.result,
+      stats: trans?.stats ?? p.stats,
+      features: trans?.features ?? p.features,
+      _labels: {
+        projectOverview: t('portfolioPage.modal.projectOverview'),
+        location: t('portfolioPage.modal.location'),
+        size: t('portfolioPage.modal.size'),
+        materials: t('portfolioPage.modal.materials'),
+        completion: t('portfolioPage.modal.completion'),
+        imageCarousel: t('portfolioPage.modal.imageCarousel'),
+        view360: t('portfolioPage.modal.view360'),
+        openLightbox: t('portfolioPage.modal.openLightbox'),
+        tapToZoom: t('portfolioPage.modal.tapToZoom'),
+        panoramaHint: t('portfolioPage.modal.imageCarousel'),
+      },
+    } as Project & { _labels?: Record<string, string> };
+  });
+
   const [selectedCategory, setSelectedCategory] = useState<Category>('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const visibleProjects =
     selectedCategory === 'All'
-      ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+      ? localizedProjects
+      : localizedProjects.filter((project) => project.category === selectedCategory);
 
   return (
     <main className="bg-[#050505] text-[#F6F3EA]">
@@ -475,33 +512,30 @@ export default function PortfolioPage() {
           <div className="max-w-4xl border border-[#D4AF37]/18 bg-black/28 p-6 backdrop-blur-[3px] sm:p-8 lg:p-10">
             <div className="inline-flex items-center gap-2 border border-[#D4AF37]/35 bg-black/45 px-3 py-1 text-[10px] tracking-[0.28em] text-[#E7CB7D] uppercase">
               <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
-              Our Portfolio
+              {t('portfolioPage.tag')}
             </div>
             <h1 className="mt-5 max-w-4xl text-5xl leading-[0.9] text-[#F5F2EA] sm:text-6xl lg:text-8xl">
-              Italian Craftsmanship <br /> in Every Detail
+              {t('portfolioPage.titleLine1')} <br /> {t('portfolioPage.titleLine2')}
             </h1>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-[#D4CCBC] sm:text-lg">
-              A curated collection of residences, commercial spaces, and marine-inspired environments built with a
-              luxury pacing that favors precision, material depth, and quiet confidence.
-            </p>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-[#D4CCBC] sm:text-lg">{t('portfolioPage.description')}</p>
             <div className="mt-7 flex flex-wrap gap-2">
-              <span className="inline-flex items-center border border-[#D4AF37]/25 bg-black/35 px-3 py-1 text-[10px] tracking-[0.2em] text-[#D6CDBD] uppercase">Residential</span>
-              <span className="inline-flex items-center border border-[#D4AF37]/25 bg-black/35 px-3 py-1 text-[10px] tracking-[0.2em] text-[#D6CDBD] uppercase">Commercial</span>
-              <span className="inline-flex items-center border border-[#D4AF37]/25 bg-black/35 px-3 py-1 text-[10px] tracking-[0.2em] text-[#D6CDBD] uppercase">Marine</span>
+              <span className="inline-flex items-center border border-[#D4AF37]/25 bg-black/35 px-3 py-1 text-[10px] tracking-[0.2em] text-[#D6CDBD] uppercase">{t('portfolioPage.categories.Residential')}</span>
+              <span className="inline-flex items-center border border-[#D4AF37]/25 bg-black/35 px-3 py-1 text-[10px] tracking-[0.2em] text-[#D6CDBD] uppercase">{t('portfolioPage.categories.Commercial')}</span>
+              <span className="inline-flex items-center border border-[#D4AF37]/25 bg-black/35 px-3 py-1 text-[10px] tracking-[0.2em] text-[#D6CDBD] uppercase">{t('portfolioPage.categories.Marine')}</span>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#gallery"
                 className="inline-flex items-center gap-3 border border-[#D4AF37] bg-[#D4AF37] px-6 py-3 text-[11px] font-semibold tracking-[0.22em] text-[#090909] uppercase transition-transform duration-500 hover:-translate-y-0.5"
               >
-                Explore Projects
+                {t('portfolioPage.exploreProjects')}
                 <ChevronRight className="h-4 w-4" />
               </a>
               <a
                 href="mailto:hello@luxus.com?subject=Portfolio%20Inquiry"
                 className="inline-flex items-center gap-3 border border-[#D4AF37]/35 px-6 py-3 text-[11px] font-semibold tracking-[0.22em] text-[#F0E7D2] uppercase transition-colors duration-500 hover:border-[#D4AF37] hover:text-[#FFFFFF]"
               >
-                Contact Us
+                {t('portfolioPage.contactUs')}
               </a>
             </div>
           </div>
@@ -512,9 +546,9 @@ export default function PortfolioPage() {
         <div className="mx-auto w-full max-w-7xl">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-[10px] tracking-[0.24em] text-[#D4AF37] uppercase">Filterable Project Gallery</p>
+              <p className="text-[10px] tracking-[0.24em] text-[#D4AF37] uppercase">{t('portfolioPage.gallery.eyebrow')}</p>
               <h2 className="mt-4 text-4xl leading-[0.96] text-[#F5F2EA] sm:text-5xl lg:text-6xl">
-                Spaces shaped for <span className="italic">luxury experiences</span>
+                {t('portfolioPage.gallery.heading').split(' ').slice(0,3).join(' ')} <span className="italic">{t('portfolioPage.gallery.heading').split(' ').slice(3).join(' ')}</span>
               </h2>
             </div>
 
@@ -532,7 +566,7 @@ export default function PortfolioPage() {
                         : 'border-[#D4AF37]/20 bg-black/20 text-[#CBBFA8] hover:border-[#D4AF37]/45 hover:text-[#F5F2EA]'
                     }`}
                   >
-                    {category}
+                      {t(`portfolioPage.categories.${category}`)}
                   </button>
                 );
               })}
@@ -567,8 +601,8 @@ export default function PortfolioPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/28 to-black/10 transition-opacity duration-700 group-hover:from-black/72" />
                     <div className="absolute inset-0 border border-transparent group-hover:border-[#D4AF37]/35 transition-colors duration-700" />
-                    <div className="absolute right-4 top-4 rounded-full border border-[#D4AF37]/30 bg-black/45 px-3 py-1 text-[10px] tracking-[0.22em] text-[#E7CB7D] uppercase backdrop-blur-sm">
-                      {project.category}
+                      <div className="absolute right-4 top-4 rounded-full border border-[#D4AF37]/30 bg-black/45 px-3 py-1 text-[10px] tracking-[0.22em] text-[#E7CB7D] uppercase backdrop-blur-sm">
+                      {t(`portfolioPage.categories.${project.category}`)}
                     </div>
                     <div className="absolute left-4 right-4 bottom-4 flex items-end justify-between gap-4">
                       <div>
@@ -582,7 +616,7 @@ export default function PortfolioPage() {
                     <div className="absolute inset-x-0 bottom-0 translate-y-full border-t border-[#D4AF37]/20 bg-black/72 px-4 py-4 opacity-0 backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                       <p className="text-xs leading-6 text-[#D0C7B8]">{project.location}</p>
                       <div className="mt-4 inline-flex items-center gap-2 text-[10px] tracking-[0.22em] text-[#D4AF37] uppercase">
-                        View Project
+                        {t('portfolioPage.modal.viewProject')}
                         <ChevronRight className="h-3.5 w-3.5" />
                       </div>
                     </div>
@@ -600,24 +634,24 @@ export default function PortfolioPage() {
         <div className="relative mx-auto w-full max-w-7xl">
           <div className="grid gap-8 border border-[#D4AF37]/14 bg-black/25 p-6 backdrop-blur-sm sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:p-10">
             <div>
-              <p className="text-[10px] tracking-[0.28em] text-[#D4AF37] uppercase">Case Studies</p>
+              <p className="text-[10px] tracking-[0.28em] text-[#D4AF37] uppercase">{t('portfolioPage.caseStudies.format')}</p>
               <h2 className="mt-4 text-4xl leading-[0.96] text-[#F5F2EA] sm:text-5xl lg:text-6xl">
-                Flagship projects, explained as <span className="italic">outcomes</span>
+                {t('portfolioPage.caseStudies.focus')} <span className="italic">{t('portfolioPage.caseStudies.curated')}</span>
               </h2>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
               <div className="border border-[#D4AF37]/14 bg-black/35 px-4 py-4">
-                <p className="text-[10px] tracking-[0.22em] text-[#8F897C] uppercase">Format</p>
-                <p className="mt-2 text-sm text-[#E6DFD0]">Challenge → Strategy → Result</p>
+                <p className="text-[10px] tracking-[0.22em] text-[#8F897C] uppercase">{t('portfolioPage.caseStudies.format')}</p>
+                <p className="mt-2 text-sm text-[#E6DFD0]">{t('portfolioPage.modal.challenge')} → {t('portfolioPage.modal.solution')} → {t('portfolioPage.modal.result')}</p>
               </div>
               <div className="border border-[#D4AF37]/14 bg-black/35 px-4 py-4">
-                <p className="text-[10px] tracking-[0.22em] text-[#8F897C] uppercase">Focus</p>
-                <p className="mt-2 text-sm text-[#E6DFD0]">Delivery impact and business value</p>
+                <p className="text-[10px] tracking-[0.22em] text-[#8F897C] uppercase">{t('portfolioPage.caseStudies.focus')}</p>
+                <p className="mt-2 text-sm text-[#E6DFD0]">{t('portfolioPage.contactCTA.description')}</p>
               </div>
               <div className="border border-[#D4AF37]/14 bg-black/35 px-4 py-4">
-                <p className="text-[10px] tracking-[0.22em] text-[#8F897C] uppercase">Curated</p>
-                <p className="mt-2 text-sm text-[#E6DFD0]">Residential, Commercial, Marine</p>
+                <p className="text-[10px] tracking-[0.22em] text-[#8F897C] uppercase">{t('portfolioPage.caseStudies.curated')}</p>
+                <p className="mt-2 text-sm text-[#E6DFD0]">{t('portfolioPage.categories.Residential')}, {t('portfolioPage.categories.Commercial')}, {t('portfolioPage.categories.Marine')}</p>
               </div>
             </div>
           </div>
@@ -688,19 +722,16 @@ export default function PortfolioPage() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto flex w-full max-w-5xl flex-col items-center text-center"
         >
-          <p className="text-[10px] tracking-[0.24em] text-[#D4AF37] uppercase">Discover Your Future Project</p>
+          <p className="text-[10px] tracking-[0.24em] text-[#D4AF37] uppercase">{t('portfolioPage.contactCTA.eyebrow')}</p>
           <h2 className="mt-5 text-4xl leading-[0.96] text-[#F5F2EA] sm:text-5xl lg:text-6xl">
-            Ready to shape a project that feels <span className="italic text-[#D4AF37]">inevitable</span>?
+            {t('portfolioPage.contactCTA.heading')}
           </h2>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[#C9C1B2]">
-            Speak with the team behind our most precise residences, refined commercial spaces, and marine-inspired
-            interiors.
-          </p>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-[#C9C1B2]">{t('portfolioPage.contactCTA.description')}</p>
           <a
             href="mailto:hello@luxus.com?subject=Portfolio%20Inquiry"
             className="mt-10 inline-flex items-center gap-3 border border-[#D4AF37] bg-[#D4AF37] px-8 py-4 text-[11px] font-semibold tracking-[0.24em] text-[#090909] uppercase transition-transform duration-500 hover:-translate-y-0.5"
           >
-            Contact Us
+            {t('portfolioPage.contactCTA.button')}
             <ArrowRight className="h-4 w-4" />
           </a>
         </motion.div>

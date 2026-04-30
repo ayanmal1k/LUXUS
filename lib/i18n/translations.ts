@@ -179,6 +179,97 @@ type Messages = {
       };
     };
   };
+  aboutPage?: {
+    eyebrow: string;
+    headingLine1: string;
+    headingLine2: string;
+    paragraphs: string[];
+    quote: string;
+    quoteAuthor: string;
+    principles: {
+      title: string;
+      subtitle: string;
+      items: {
+        sustainability: { title: string; description: string };
+        craftsmanship: { title: string; description: string };
+        engineering: { title: string; description: string };
+      };
+    };
+    leadership: {
+      eyebrow: string;
+      heading: string;
+      roles: { chiefEngineer: string; headIntl: string; headConstruction: string; headInteriors: string };
+    };
+    cta: { heading: string; viewCollection: string; scheduleTour: string };
+  };
+  portfolioPage?: {
+    tag: string;
+    titleLine1: string;
+    titleLine2: string;
+    description: string;
+    categories: { All: string; Residential: string; Commercial: string; Marine: string };
+    exploreProjects: string;
+    contactUs: string;
+    gallery: {
+      eyebrow: string;
+      heading: string;
+      filterHint: string;
+    };
+    modal: {
+      projectOverview: string;
+      location: string;
+      size: string;
+      materials: string;
+      completion: string;
+      challenge: string;
+      solution: string;
+      result: string;
+      imageCarousel: string;
+      view360: string;
+      openLightbox: string;
+      tapToZoom: string;
+      viewProject: string;
+      outcomeStat: string;
+    };
+    caseStudies: { format: string; focus: string; curated: string };
+    contactCTA: { eyebrow: string; heading: string; description: string; button: string };
+    projects: Record<string, {
+      title: string;
+      subtitle: string;
+      location: string;
+      size: string;
+      year: string;
+      materials: string;
+      overview: string;
+      challenge: string;
+      solution: string;
+      result: string;
+      stats: Array<{ label: string; value: string }>;
+      features: string[];
+    }>;
+    caseStudyItems: Record<string, { title: string; subtitle: string; challenge: string; solution: string; result: string; image: string; stat: string }>;
+  };
+  portfolioContactPage: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    requestHeading: string;
+    requestHighlight: string;
+    requestDescription: string;
+    benefits: string[];
+    form: {
+      fullName: string;
+      email: string;
+      phone: string;
+      company: string;
+      projectType: string;
+      projectTypeOptions: { residential: string; commercial: string; marine: string; mixed: string; other: string };
+      message: string;
+      placeholders: { name: string; email: string; phone: string; company: string; message: string; projectType: string };
+      submit: { sending: string; default: string };
+      successMessage: string;
+    };
+  };
 };
 
 export const translations: Record<Locale, Messages> = {
@@ -353,9 +444,9 @@ export const translations: Record<Locale, Messages> = {
       items: {
         first: {
           quote:
-            'Penthouse Owner, Ocean Reef Punta Paitilla',
+            'The level of detail in the stone is unparalleled in Central America. It truly feels like a piece of Lake Como in Panama.',
           name: 'Alessandra Rossi',
-          role: '',
+          role: 'Penthouse Owner, Ocean Reef Punta Paitilla',
         },
         second: {
           quote:
@@ -371,6 +462,203 @@ export const translations: Record<Locale, Messages> = {
         },
       },
     },
+    aboutPage: {
+      eyebrow: 'The Genesis',
+      headingLine1: 'From Tuscan Marble',
+      headingLine2: 'to American Horizons',
+      paragraphs: [
+        'The story of Luxus begins in Tuscany, among noble materials and a construction tradition that for over 25 years has shaped high-end residences.',
+        'This heritage merges with refined expertise in superyacht interiors, creating a distinctive design language.',
+        'The result is residences designed to last, where proportion, harmony, and artisanal finishes come together in timeless spaces overlooking the sea, capable of surpassing traditional architectural standards across the Americas.',
+      ],
+      quote: 'Elegance is the only beauty that never fades.',
+      quoteAuthor: 'Audrey Hepburn',
+      principles: {
+        title: 'Our Alchemical',
+        subtitle: 'Principles',
+        items: {
+          sustainability: {
+            title: 'Sustainability',
+            description: "Harmonizing architecture with Panama's unique biodiversity. We build for centuries, not seasons.",
+          },
+          craftsmanship: {
+            title: 'Italian Craftsmanship',
+            description: 'Importing the soul of Italian design where every slab of marble and hand-forged hinge tells a story of mastery.',
+          },
+          engineering: {
+            title: 'Precision Engineering',
+            description: 'Applying rigorous structural logic to ensure coastal resilience without sacrificing aesthetic weightlessness.',
+          },
+        },
+      },
+      leadership: {
+        eyebrow: 'The Architects of Experience',
+        heading: 'Our Leadership',
+        roles: {
+          chiefEngineer: 'Chief Engineer',
+          headIntl: 'Head of International Relations',
+          headConstruction: 'Head of Construction',
+          headInteriors: 'Head of Interiors',
+        },
+      },
+      cta: { heading: 'Ready to transform your vision into a unique residence?', viewCollection: 'View the Collection', scheduleTour: 'Schedule Private Tour' },
+    },
+    portfolioPage: {
+      tag: 'Our Portfolio',
+      titleLine1: 'Italian Craftsmanship',
+      titleLine2: 'in Every Detail',
+      description:
+        'A curated collection of residences, commercial spaces, and marine-inspired environments built with a luxury pacing that favors precision, material depth, and quiet confidence.',
+      categories: { All: 'All', Residential: 'Residential', Commercial: 'Commercial', Marine: 'Marine' },
+      exploreProjects: 'Explore Projects',
+      contactUs: 'Contact Us',
+      gallery: { eyebrow: 'Filterable Project Gallery', heading: 'Spaces shaped for luxury experiences', filterHint: 'Filter projects by category' },
+      modal: {
+        projectOverview: 'Project Overview',
+        location: 'Location',
+        size: 'Size',
+        materials: 'Materials',
+        completion: 'Completion',
+        challenge: 'Challenge',
+        solution: 'Solution',
+        result: 'Result',
+        imageCarousel: 'Image Carousel',
+        view360: 'View 360',
+        openLightbox: 'Open lightbox floor plan',
+        tapToZoom: 'Tap to zoom',
+        viewProject: 'View Project',
+        outcomeStat: 'Outcome Stat',
+      },
+      caseStudies: { format: 'Format', focus: 'Focus', curated: 'Curated' },
+      contactCTA: { eyebrow: 'Discover Your Future Project', heading: 'Ready to shape a project that feels inevitable?', description: 'Speak with the team behind our most precise residences, refined commercial spaces, and marine-inspired interiors.', button: 'Contact Us' },
+      projects: {
+        'ocean-reef-villa': {
+          title: 'Ocean Reef Villa',
+          subtitle: 'Made in Italy Luxury',
+          location: 'Ocean Reef Islands, Panama',
+          size: '8,400 sq ft',
+          year: '2025',
+          materials: 'Carrara marble, bronze, teak',
+          overview:
+            'A waterfront villa shaped like a private gallery, balancing marine resilience with the softness of Tuscan materiality and a restrained, luminous interior palette.',
+          challenge: 'Deliver a residence exposed to salt air, humidity, and changing shoreline conditions without compromising elegance.',
+          solution: 'A yacht-inspired structural envelope, concealed service systems, and carefully tuned spatial thresholds for shade, airflow, and privacy.',
+          result: 'A durable coastal home with museum-grade finishes, generous indoor-outdoor flow, and a calm procession of rooms centered on the water.',
+          stats: [
+            { label: 'Location', value: 'Panama' },
+            { label: 'Material Palette', value: 'Italy + Marine Grade' },
+            { label: 'Completion', value: '2025' },
+          ],
+          features: ['Salt-resistant envelope', 'Golden-ratio circulation', 'Private shoreline terrace', 'Bespoke Italian joinery'],
+        },
+        'marina-atelier': {
+          title: 'Marina Atelier',
+          subtitle: 'Floating Commercial Showcase',
+          location: 'Balboa District',
+          size: '12,100 sq ft',
+          year: '2024',
+          materials: 'Ebonized oak, brushed brass, stone',
+          overview: 'A client-facing experience center designed as a quiet destination for hospitality, negotiation, and brand storytelling.',
+          challenge: 'Create a commercial environment that feels intimate, premium, and memorable while accommodating frequent daily use.',
+          solution: 'Layered lighting, acoustic material sequencing, and a central arrival axis that frames the project from the first step inside.',
+          result: 'A refined showroom that functions as both a sales environment and an architectural statement piece.',
+          stats: [
+            { label: 'Location', value: 'Balboa' },
+            { label: 'Use', value: 'Commercial Showcase' },
+            { label: 'Completion', value: '2024' },
+          ],
+          features: ['Client experience suite', 'Acoustic zoning', 'Feature lighting', 'Flexible meeting rooms'],
+        },
+        'aurelia-penthouse': {
+          title: 'Aurelia Penthouse',
+          subtitle: 'Urban Residential Retreat',
+          location: 'Panama City',
+          size: '5,700 sq ft',
+          year: '2024',
+          materials: 'Travertine, linen oak, patinated metal',
+          overview: 'An elevated city residence that translates coastal calm into a restrained vertical composition with rich, tactile surfaces.',
+          challenge: 'Maintain privacy and warmth in a high-rise setting while preserving long-view sightlines and natural light.',
+          solution: 'A perimeter of soft architectural fins, layered drapery, and integrated millwork that conceals function and amplifies serenity.',
+          result: 'A luminous urban retreat with gallery-like walls, quiet transitions, and a distinctly Mediterranean cadence.',
+          stats: [
+            { label: 'Location', value: 'City Center' },
+            { label: 'Type', value: 'Penthouse' },
+            { label: 'Completion', value: '2024' },
+          ],
+          features: ['Perimeter fins', 'Integrated millwork', 'Quiet spa suite', 'Panoramic city views'],
+        },
+        'harbor-yard': {
+          title: 'Harbor Yard',
+          subtitle: 'Marine-Grade Floating Residence',
+          location: 'Pacific Coast',
+          size: '6,200 sq ft',
+          year: '2025',
+          materials: 'Marine composites, teak, brushed stainless',
+          overview: 'A residence informed by superyacht engineering, with water-resistant detailing and a spatial rhythm that echoes onboard circulation.',
+          challenge: 'Deliver waterfront durability and visual lightness in a climate where moisture and motion are constant design factors.',
+          solution: 'Marine-grade construction, elevated thresholds, and a material system chosen for both resilience and tactility.',
+          result: 'A stable, atmospheric home with the precision of a vessel and the comfort of a private villa.',
+          stats: [
+            { label: 'Location', value: 'Pacific Coast' },
+            { label: 'Type', value: 'Marine Residential' },
+            { label: 'Completion', value: '2025' },
+          ],
+          features: ['Marine composites', 'Elevated thresholds', 'Seaworthy detailing', 'Waterfront lounge deck'],
+        },
+      },
+      caseStudyItems: {
+        'ocean-reef-villa': {
+          title: 'Ocean Reef Villa',
+          subtitle: 'Made in Italy Luxury',
+          challenge: 'A shoreline residence needed to feel timeless while surviving salt, sun, and humidity.',
+          solution: 'A marine-grade shell wrapped around warm Italian surfaces and a calm, axial plan.',
+          result: 'A waterfront home that feels more like a private museum than a coastal house.',
+          image: '/hero%20bg.png',
+          stat: '32% faster delivery through prefabricated precision components',
+        },
+        'marina-atelier': {
+          title: 'Marina Atelier',
+          subtitle: 'Commercial Experience Center',
+          challenge: 'The brief required a commercial interior that felt editorial, not transactional.',
+          solution: 'Layered light, acoustic softness, and a highly controlled arrival sequence.',
+          result: 'A premium client environment that elevates the brand through architecture.',
+          image: '/mastering%20bg.png',
+          stat: '18 curated material touchpoints across the visitor journey',
+        },
+        'harbor-yard': {
+          title: 'Harbor Yard',
+          subtitle: 'Marine-Grade Residence',
+          challenge: 'The home had to read as delicate while being engineered for rough coastal conditions.',
+          solution: 'Yacht-derived structural logic with tactile finishes and hidden service integration.',
+          result: 'A stable and luminous residence with a subtle nautical discipline.',
+          image: '/Botticino%20Marble.png',
+          stat: '100% coastal-spec materials throughout the envelope',
+        },
+      },
+    },
+    portfolioContactPage: {
+      eyebrow: 'Our Portfolio',
+      title: 'Portfolio Updating',
+      description: 'Contact us for a confidential presentation of our projects in Italy and the Americas.',
+      requestHeading: 'Request a Confidential',
+      requestHighlight: 'Presentation',
+      requestDescription:
+        'Our portfolio showcases carefully crafted residences, commercial spaces, and marine-inspired environments across Italy and the Americas. Fill out the form to receive a detailed overview of our most recent projects.',
+      benefits: ['25+ years of luxury expertise', 'Italian craftsmanship & design', 'Bespoke project solutions', 'Confidential portfolio access'],
+      form: {
+        fullName: 'Full Name',
+        email: 'Email',
+        phone: 'Phone',
+        company: 'Company',
+        projectType: 'Project Type',
+        projectTypeOptions: { residential: 'Residential', commercial: 'Commercial', marine: 'Marine', mixed: 'Mixed-Use', other: 'Other' },
+        message: 'Message',
+        placeholders: { name: 'Your name', email: 'your@email.com', phone: '+1 (555) 000-0000', company: 'Your company', message: 'Tell us about your project...', projectType: 'Select a project type' },
+        submit: { sending: 'Sending...', default: 'Request Portfolio' },
+        successMessage: "Thank you! We'll be in touch shortly.",
+      },
+    },
+    
   },
   it: {
     hero: {
@@ -563,7 +851,29 @@ export const translations: Record<Locale, Messages> = {
         },
       },
     },
+    portfolioContactPage: {
+      eyebrow: 'Il Nostro Portfolio',
+      title: 'Aggiornamento Portfolio',
+      description: 'Contattaci per una presentazione riservata dei nostri progetti in Italia e nelle Americhe.',
+      requestHeading: 'Richiedi una Presentazione',
+      requestHighlight: 'Riservata',
+      requestDescription: "Il nostro portfolio presenta residenze curate, spazi commerciali e ambienti ispirati al mare in Italia e Americhe. Compila il modulo per ricevere una panoramica dettagliata dei nostri progetti più recenti.",
+      benefits: ['25+ anni di esperienza nel lusso', "Artigianalità e design italiano", 'Soluzioni di progetto su misura', 'Accesso confidenziale al portfolio'],
+      form: {
+        fullName: 'Nome e Cognome',
+        email: 'Email',
+        phone: 'Telefono',
+        company: 'Azienda',
+        projectType: 'Tipo di progetto',
+        projectTypeOptions: { residential: 'Residenziale', commercial: 'Commerciale', marine: 'Marino', mixed: 'Uso Misto', other: 'Altro' },
+        message: 'Messaggio',
+        placeholders: { name: 'Il tuo nome', email: 'tuo@email.com', phone: '+1 (555) 000-0000', company: 'La tua azienda', message: 'Raccontaci del tuo progetto...', projectType: 'Seleziona un tipo di progetto' },
+        submit: { sending: 'Invio in corso...', default: 'Richiedi il Portfolio' },
+        successMessage: 'Grazie! Ti contatteremo a breve.',
+      },
+    },
   },
+
   es: {
     hero: {
       explorationTag: 'Descubre una nueva visión del habitar',
@@ -731,6 +1041,28 @@ export const translations: Record<Locale, Messages> = {
         collectionLabel: 'Coleccion Luxus',
       },
       catalogButton: 'Solicita nuestro catálogo completo de Materiales',
+    },
+    portfolioContactPage: {
+      eyebrow: 'Nuestro Portfolio',
+      title: 'Actualización del Portfolio',
+      description: 'Contáctanos para una presentación confidencial de nuestros proyectos en Italia y las Américas.',
+      requestHeading: 'Solicita una',
+      requestHighlight: 'Presentación',
+      requestDescription:
+        'Nuestro portfolio presenta residencias cuidadas, espacios comerciales y entornos inspirados en el mar en Italia y las Américas. Completa el formulario para recibir una visión detallada de nuestros proyectos más recientes.',
+      benefits: ['25+ años de experiencia en lujo', 'Artesanía y diseño italiano', 'Soluciones de proyecto a medida', 'Acceso confidencial al portfolio'],
+      form: {
+        fullName: 'Nombre completo',
+        email: 'Correo electrónico',
+        phone: 'Teléfono',
+        company: 'Empresa',
+        projectType: 'Tipo de proyecto',
+        projectTypeOptions: { residential: 'Residencial', commercial: 'Comercial', marine: 'Marino', mixed: 'Uso mixto', other: 'Otro' },
+        message: 'Mensaje',
+        placeholders: { name: 'Tu nombre', email: 'tu@email.com', phone: '+1 (555) 000-0000', company: 'Tu empresa', message: 'Cuéntanos sobre tu proyecto...', projectType: 'Selecciona un tipo de proyecto' },
+        submit: { sending: 'Enviando...', default: 'Solicitar Portfolio' },
+        successMessage: '¡Gracias! Nos pondremos en contacto contigo pronto.',
+      },
     },
     testimonialsSection: {
       heading: 'Experiencias Luxus',

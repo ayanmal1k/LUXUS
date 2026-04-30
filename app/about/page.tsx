@@ -1,53 +1,37 @@
-'use client';
+"use client";
 
 import Image from 'next/image';
 import { ArrowRight, Compass, Hammer, Leaf, Sparkles } from 'lucide-react';
-
-const principles = [
-  {
-    title: 'Sustainability',
-    description:
-      "Harmonizing architecture with Panama's unique biodiversity. We build for centuries, not seasons.",
-    Icon: Leaf,
-  },
-  {
-    title: 'Italian Craftsmanship',
-    description:
-      'Importing the soul of Italian design where every slab of marble and hand-forged hinge tells a story of mastery.',
-    Icon: Hammer,
-  },
-  {
-    title: 'Precision Engineering',
-    description:
-      'Applying rigorous structural logic to ensure coastal resilience without sacrificing aesthetic weightlessness.',
-    Icon: Compass,
-  },
-];
-
-const leaders = [
-  {
-    name: 'Paolo Basile',
-    role: 'Chief Engineer',
-    image: 'team/paolo.jpeg',
-  },
-  {
-    name: 'Matteo Paolicchi',
-    role: 'Head of International Relations',
-    image: 'team/matteo.png',
-  },
-  {
-    name: 'Martin Dhamo',
-    role: 'Head of Construction',
-    image: 'team/Martin.jpeg',
-  },
-  {
-    name: 'Gianluca Iacoponi',
-    role: 'Head of Interiors',
-    image: 'team/Gianluca.jpeg',
-  },
-];
+import { useI18n } from '@/components/i18n-provider';
+import { translations } from '@/lib/i18n/translations';
 
 export default function AboutPage() {
+  const { t, locale } = useI18n();
+
+  const principles = [
+    {
+      title: t('aboutPage.principles.items.sustainability.title'),
+      description: t('aboutPage.principles.items.sustainability.description'),
+      Icon: Leaf,
+    },
+    {
+      title: t('aboutPage.principles.items.craftsmanship.title'),
+      description: t('aboutPage.principles.items.craftsmanship.description'),
+      Icon: Hammer,
+    },
+    {
+      title: t('aboutPage.principles.items.engineering.title'),
+      description: t('aboutPage.principles.items.engineering.description'),
+      Icon: Compass,
+    },
+  ];
+
+  const leaders = [
+    { name: 'Paolo Basile', role: t('aboutPage.leadership.roles.chiefEngineer'), image: 'team/paolo.jpeg' },
+    { name: 'Matteo Paolicchi', role: t('aboutPage.leadership.roles.headIntl'), image: 'team/matteo.png' },
+    { name: 'Martin Dhamo', role: t('aboutPage.leadership.roles.headConstruction'), image: 'team/Martin.jpeg' },
+    { name: 'Gianluca Iacoponi', role: t('aboutPage.leadership.roles.headInteriors'), image: 'team/Gianluca.jpeg' },
+  ];
   return (
     <main className="min-h-screen bg-[#050505] text-[#F6F3EA]">
       <section className="relative overflow-hidden border-b border-[#D4AF37]/10 pt-10 sm:pt-14">
@@ -64,31 +48,25 @@ export default function AboutPage() {
               className="mb-8 text-[10px] font-semibold tracking-[0.2em] text-[#D4AF37] uppercase reveal"
               style={{ animationDelay: '120ms' }}
             >
-              The Genesis
+              {t('aboutPage.eyebrow')}
             </p>
 
             <h1
               className="reveal max-w-xl text-5xl leading-[0.94] text-[#F6F3EA] sm:text-6xl lg:text-7xl"
               style={{ animationDelay: '220ms' }}
             >
-              From Tuscan Marble
+              {t('aboutPage.headingLine1')}
               <br />
-              to American Horizons
+              {t('aboutPage.headingLine2')}
             </h1>
 
             <div
               className="reveal mt-10 max-w-md space-y-6 text-sm leading-7 text-[#BEB8A7]"
               style={{ animationDelay: '320ms' }}
             >
-              <p>
-                The story of Luxus begins in Tuscany, among noble materials and a construction tradition that for over 25 years has shaped high-end residences.
-              </p>
-              <p>
-                This heritage merges with refined expertise in superyacht interiors, creating a distinctive design language.
-              </p>
-              <p>
-                The result is residences designed to last, where proportion, harmony, and artisanal finishes come together in timeless spaces overlooking the sea, capable of surpassing traditional architectural standards across the Americas.
-              </p>
+                {(translations[locale].aboutPage?.paragraphs ?? []).map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
             </div>
           </div>
 
@@ -113,8 +91,8 @@ export default function AboutPage() {
             </div>
             <div className="absolute inset-0 bg-gradient-to-l from-black/15 via-black/42 to-black/70 transition-opacity duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-80" />
             <div className="absolute bottom-6 left-6 max-w-sm border border-[#D4AF37]/30 bg-black/58 p-4 backdrop-blur-sm transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:border-[#D4AF37]/55 sm:bottom-10 sm:left-10 sm:p-6">
-              <p className="text-lg italic leading-8 text-[#E7CB7D]">"Elegance is the only beauty that never fades."</p>
-              <p className="mt-2 text-[10px] tracking-[0.2em] text-[#9E998C] uppercase">Audrey Hepburn</p>
+              <p className="text-lg italic leading-8 text-[#E7CB7D]">"{t('aboutPage.quote')}"</p>
+              <p className="mt-2 text-[10px] tracking-[0.2em] text-[#9E998C] uppercase">{t('aboutPage.quoteAuthor')}</p>
             </div>
           </div>
         </div>
@@ -124,11 +102,11 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <h2 className="text-4xl leading-none text-[#F4F0E5] sm:text-5xl lg:text-6xl">
-              Our Alchemical
+              {t('aboutPage.principles.title')}
               <br />
-              Principles
+              {t('aboutPage.principles.subtitle')}
             </h2>
-            <p className="text-[10px] tracking-[0.2em] text-[#D4AF37] uppercase">The Foundation of Excellence</p>
+            <p className="text-[10px] tracking-[0.2em] text-[#D4AF37] uppercase">{t('aboutPage.principles.subtitle')}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -153,8 +131,8 @@ export default function AboutPage() {
       <section id="leadership" className="border-b border-[#D4AF37]/10 bg-[#070707]">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="mb-10 text-center">
-            <p className="text-[10px] tracking-[0.2em] text-[#D4AF37] uppercase">The Architects of Experience</p>
-            <h2 className="mt-4 text-5xl italic text-[#F5F2EA] sm:text-6xl">Our Leadership</h2>
+            <p className="text-[10px] tracking-[0.2em] text-[#D4AF37] uppercase">{t('aboutPage.leadership.eyebrow')}</p>
+            <h2 className="mt-4 text-5xl italic text-[#F5F2EA] sm:text-6xl">{t('aboutPage.leadership.heading')}</h2>
           </div>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -190,17 +168,15 @@ export default function AboutPage() {
       <section className="border-b border-[#D4AF37]/10 bg-[#060606]">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center px-4 py-20 text-center sm:px-6 lg:px-8">
           <h2 className="max-w-4xl text-5xl leading-tight text-[#F5F2EA] sm:text-6xl">
-            Ready to transform your
-            <br />
-            <span className="text-[#D4AF37] italic">vision into a unique residence?</span>
+            {t('aboutPage.cta.heading')}
           </h2>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <button className="border border-[#D4AF37] bg-[#D4AF37] px-10 py-4 text-[11px] font-medium tracking-[0.18em] text-[#0D0D0D] uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E0BF58]">
-              View the Collection
+              {t('aboutPage.cta.viewCollection')}
             </button>
             <button className="inline-flex items-center justify-center gap-2 border border-[#D4AF37]/50 px-10 py-4 text-[11px] font-medium tracking-[0.18em] text-[#E8DFC6] uppercase transition-all duration-300 hover:-translate-y-0.5 hover:border-[#D4AF37] hover:text-[#F2E9D3]">
-              Schedule Private Tour
+              {t('aboutPage.cta.scheduleTour')}
               <ArrowRight className="h-3.5 w-3.5" />
             </button>
           </div>
