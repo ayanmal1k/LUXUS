@@ -81,24 +81,15 @@ export default function AboutPage() {
               style={{ animationDelay: '320ms' }}
             >
               <p>
-                The story of Luxus begins amidst Tuscany&apos;s noble stones and rare materials, where over 25 years of
-                luxury villa construction expertise converges with superyacht interior mastery.
+                The story of Luxus begins in Tuscany, among noble materials and a construction tradition that for over 25 years has shaped high-end residences.
               </p>
               <p>
-                This unique fusion delivers residences engineered with marine-grade durability, golden-ratio spatial
-                flow, and artisanal finishes—creating permanent waterfront galleries that transcend conventional
-                architecture across the Americas.
+                This heritage merges with refined expertise in superyacht interiors, creating a distinctive design language.
+              </p>
+              <p>
+                The result is residences designed to last, where proportion, harmony, and artisanal finishes come together in timeless spaces overlooking the sea, capable of surpassing traditional architectural standards across the Americas.
               </p>
             </div>
-
-            <a
-              href="#principles"
-              className="reveal mt-8 inline-flex w-fit items-center gap-3 text-[11px] font-medium tracking-[0.18em] text-[#D4AF37] uppercase"
-              style={{ animationDelay: '420ms' }}
-            >
-              <span className="inline-block h-px w-10 bg-[#D4AF37]" />
-              Discover our heritage
-            </a>
           </div>
 
           <div className="group reveal relative aspect-[1760/1476] w-full overflow-hidden border border-[#D4AF37]/20 shadow-[0_25px_80px_rgba(0,0,0,0.45)] lg:self-center" style={{ animationDelay: '280ms' }}>
@@ -199,9 +190,9 @@ export default function AboutPage() {
       <section className="border-b border-[#D4AF37]/10 bg-[#060606]">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center px-4 py-20 text-center sm:px-6 lg:px-8">
           <h2 className="max-w-4xl text-5xl leading-tight text-[#F5F2EA] sm:text-6xl">
-            Ready to co-author your
+            Ready to transform your
             <br />
-            <span className="text-[#D4AF37] italic">Panamanian Legacy?</span>
+            <span className="text-[#D4AF37] italic">vision into a unique residence?</span>
           </h2>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">

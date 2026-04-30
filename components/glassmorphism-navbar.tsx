@@ -17,7 +17,7 @@ const allLinks: Array<{ key: NavbarKey; href: string }> = [
   { key: 'home', href: '/' },
   { key: 'about', href: '/about' },
   { key: 'services', href: '/#services' },
-  { key: 'portfolio', href: '/portfolio' },
+  { key: 'portfolio', href: '/portfolio-contact' },
 ];
 
 const leftLinks = allLinks.slice(0, 2);

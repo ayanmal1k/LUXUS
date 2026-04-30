@@ -50,7 +50,7 @@ export default function MasteringTropicalHorizonSection() {
               {/* Main image — greyscale → colour on hover */}
               <div className="relative h-[520px] overflow-hidden">
                 <Image
-                  src="/mastering bg.png"
+                  src="/villa.jpg"
                   alt={t('architecturalVision.imageAlt')}
                   fill
                   className="object-cover object-center grayscale group-hover:grayscale-0 scale-100 group-hover:scale-[1.06] transition-all duration-[1.4s] ease-out"

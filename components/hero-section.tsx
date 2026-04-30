@@ -118,7 +118,7 @@ export default function HeroSection() {
           </button>
         </div>
 
-        <div
+        {/* <div
           className={`mt-6 flex flex-col items-center justify-center text-center transition-all duration-1000 delay-700 ${
             isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}
@@ -130,7 +130,7 @@ export default function HeroSection() {
             className="mt-2 h-6 w-6 text-[#D4AF37]"
             style={{ animation: 'bounceArrow 1.5s ease-in-out infinite' }}
           />
-        </div>
+        </div> */}
       </div>
 
       <div className="relative z-10 mx-auto mt-10 w-full max-w-7xl px-4 pb-8 sm:mt-14 sm:px-6 sm:pb-12 lg:px-8">

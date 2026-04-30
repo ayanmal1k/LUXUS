@@ -213,13 +213,27 @@ export default function PremiumMaterialSection() {
           ))}
         </motion.div>
 
-        {/* ── Footer row ── */}
+        {/* ── Catalog Button ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
           viewport={{ once: true }}
-          className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#D4AF37]/10 pt-8"
+          className="mt-16 flex justify-center"
+        >
+          <button className="group relative overflow-hidden bg-gradient-to-r from-[#D4AF37] via-[#E8C547] to-[#D4AF37] px-8 py-3 text-[11px] font-medium tracking-[0.18em] text-[#0B0B0B] uppercase transition-all duration-300 hover:shadow-[0_0_24px_rgba(212,175,55,0.6)] border border-[#D4AF37]">
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500 animate-pulse" />
+            <span className="relative">{t('premiumMaterialsSection.catalogButton')}</span>
+          </button>
+        </motion.div>
+
+        {/* ── Footer row ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.48 }}
+          viewport={{ once: true }}
+          className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#D4AF37]/10 pt-8"
         >
           <span className="text-[#5A544D] text-xs tracking-[0.26em] uppercase font-medium">
             {t('premiumMaterialsSection.footer.craftsmanship')}
