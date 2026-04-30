@@ -28,22 +28,22 @@ const leaders = [
   {
     name: 'Paolo Basile',
     role: 'Chief Engineer',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80',
+    image: 'team/paolo.jpeg',
   },
   {
     name: 'Matteo Paolicchi',
     role: 'Head of International Relations',
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80',
+    image: 'team/matteo.png',
   },
   {
     name: 'Martin Dhamo',
     role: 'Head of Construction',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80',
+    image: 'team/Martin.jpeg',
   },
   {
     name: 'Gianluca Iacoponi',
     role: 'Head of Interiors',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80',
+    image: 'team/Gianluca.jpeg',
   },
 ];
 
@@ -101,22 +101,22 @@ export default function AboutPage() {
             </a>
           </div>
 
-          <div className="group reveal relative min-h-[420px] overflow-hidden border border-[#D4AF37]/20 shadow-[0_25px_80px_rgba(0,0,0,0.45)] lg:min-h-[760px]" style={{ animationDelay: '280ms' }}>
-            <div className="absolute inset-0 transform-gpu transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]">
+          <div className="group reveal relative aspect-[1760/1476] w-full overflow-hidden border border-[#D4AF37]/20 shadow-[0_25px_80px_rgba(0,0,0,0.45)] lg:self-center" style={{ animationDelay: '280ms' }}>
+            <div className="absolute inset-0 transform-gpu transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]">
               <Image
                 src="/about%20hero%20bg.png"
                 alt="About hero grayscale"
                 fill
-                className="object-cover object-center grayscale brightness-[0.78]"
+                className="object-contain object-center grayscale brightness-[0.78]"
                 priority
               />
             </div>
-            <div className="absolute inset-0 opacity-0 transform-gpu transition-[opacity,transform] duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:scale-[1.02]">
+            <div className="absolute inset-0 opacity-0 transform-gpu transition-[opacity,transform] duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:scale-[1.01]">
               <Image
                 src="/about%20hero%20bg.png"
                 alt="About hero color"
                 fill
-                className="object-cover object-center"
+                className="object-contain object-center"
                 priority
               />
             </div>
@@ -173,7 +173,7 @@ export default function AboutPage() {
                 className="reveal group relative overflow-hidden border border-[#D4AF37]/20 bg-[#0E0E0E] transition-all duration-500 hover:-translate-y-1"
                 style={{ animationDelay: `${220 + index * 120}ms` }}
               >
-                <div className="relative h-72 overflow-hidden bg-black transition-transform duration-700 group-hover:scale-[1.03]">
+                <div className="relative h-96 md:h-[28rem] lg:h-[32rem] overflow-hidden bg-black transition-transform duration-700 group-hover:scale-[1.03]">
                   <img
                     src={leader.image}
                     alt={leader.name}
@@ -186,8 +186,8 @@ export default function AboutPage() {
                     <Sparkles className="h-3 w-3" />
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-2xl text-[#F6F3EA]">{leader.name}</h3>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-3xl md:text-4xl text-[#F6F3EA]">{leader.name}</h3>
                   <p className="mt-1 text-[10px] tracking-[0.18em] text-[#D4AF37] uppercase">{leader.role}</p>
                 </div>
               </article>
