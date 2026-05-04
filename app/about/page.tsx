@@ -142,11 +142,11 @@ export default function AboutPage() {
                 className="reveal group relative overflow-hidden border border-[#D4AF37]/20 bg-[#0E0E0E] transition-all duration-500 hover:-translate-y-1"
                 style={{ animationDelay: `${220 + index * 120}ms` }}
               >
-                <div className="relative h-96 md:h-[28rem] lg:h-[32rem] overflow-hidden bg-black transition-transform duration-700 group-hover:scale-[1.03]">
+                <div className="relative h-[28rem] md:h-[28rem] lg:h-[32rem] overflow-hidden bg-black transition-transform duration-700 group-hover:scale-[1.03]">
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="h-full w-full object-cover object-center grayscale transition-[transform,filter] duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
+                    className="h-full w-full object-cover object-top grayscale transition-[transform,filter] duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
                     loading="lazy"
                     referrerPolicy="no-referrer"
                   />
