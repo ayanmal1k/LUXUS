@@ -143,7 +143,7 @@ export default function HeroSection() {
           >
             <span className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
             <p className="text-3xl font-bold sm:text-4xl" style={{ color: '#D4AF37' }}>
-              20+
+              25+
             </p>
             <p className="mt-2 text-xs font-light tracking-wider text-gray-200 uppercase sm:text-sm">
               {t('hero.stats.experience')}

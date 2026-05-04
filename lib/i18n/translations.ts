@@ -303,7 +303,7 @@ export const translations: Record<Locale, Messages> = {
       contactUs: 'Contact Us',
     },
     footer: {
-      title: 'Luxury Development & Construction',
+      title: 'Luxus International Group – Ph Worldwide Plaza, Bella Vista, Suite 7, Panama City, Panama – info@luxusinternationalgroup.com',
       socialTitle: 'Follow Us',
       copyright: '© 2026 LUXUS. All rights reserved.',
     },
@@ -678,7 +678,7 @@ export const translations: Record<Locale, Messages> = {
       headingLine2: 'nelle Americhe',
       description:
         "Dall'eccellenza italiana nella costruzione residenziale e negli interni di yacht nasce una nuova dimensione dell abitare di lusso.",
-      cta: 'Vivi l eccellenza',
+      cta: 'vivi l eccellenza',
       imageAlt: "Edifici di lusso con riflesso sull'acqua",
       stats: {
         experience: 'Anni di esperienza',
@@ -695,7 +695,7 @@ export const translations: Record<Locale, Messages> = {
       contactUs: 'Contattaci',
     },
     footer: {
-      title: 'Sviluppo e Costruzione di Lusso',
+      title: 'Luxus International Group – Ph Worldwide Plaza, Bella Vista, Suite 7, Panama City, Panama – info@luxusinternationalgroup.com',
       socialTitle: 'Seguici',
       copyright: '© 2026 LUXUS. Tutti i diritti riservati.',
     },
@@ -959,7 +959,7 @@ export const translations: Record<Locale, Messages> = {
       contactUs: 'Contáctanos',
     },
     footer: {
-      title: 'Desarrollo y Construcción de Lujo',
+      title: 'Luxus International Group – Ph Worldwide Plaza, Bella Vista, Suite 7, Panama City, Panama – info@luxusinternationalgroup.com',
       socialTitle: 'Síguenos',
       copyright: '© 2026 LUXUS. Todos los derechos reservados.',
     },
