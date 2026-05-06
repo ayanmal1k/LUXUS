@@ -101,10 +101,10 @@ export default function AboutPage() {
       <section id="principles" className="border-b border-[#D4AF37]/10 bg-[linear-gradient(120deg,#111111_0%,#1A1A1A_45%,#141414_100%)]">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            <h2 className="text-4xl leading-none text-[#F4F0E5] sm:text-5xl lg:text-6xl">
-              {t('aboutPage.principles.title')}
+            <h2 className="text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              <span className="text-[#F4F0E5]">{t('aboutPage.principles.title')}</span>
               <br />
-              {t('aboutPage.principles.subtitle')}
+              <span className="text-[#D4AF37]">{t('aboutPage.principles.subtitle')}</span>
             </h2>
             <p className="text-[10px] tracking-[0.2em] text-[#D4AF37] uppercase">{t('aboutPage.principles.subtitle')}</p>
           </div>
