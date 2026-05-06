@@ -420,29 +420,29 @@ export const translations: Record<Locale, Messages> = {
       headingLine1: 'Our Premium',
       headingLine2: 'Materials',
       description:
-        'We Offer the Finest Italian Materials, Each With a Unique Geological Story and Unmatched Artisanal Quality, Selected to Elevate Every Space With Timeless Elegance.',      catalogButton: 'Request our complete Materials Catalog',      cards: {
-        carrara: {
-          name: 'Carrara Marble',
-          origin: 'Carrara, Tuscany - Italy',
-          description:
-            'Experience the timeless elegance of Carrara marble, renowned for its fine grain and bright veining, perfect for creating statement floors, walls, and accents.',
-          tag: 'Signature Collection',
+        'We Offer the Finest Italian Materials, Each With a Unique Geological Story and Unmatched Artisanal Quality, Selected to Elevate Every Space With Timeless Elegance.', catalogButton: 'Request our complete Materials Catalog', cards: {
+          carrara: {
+            name: 'Carrara Marble',
+            origin: 'Carrara, Tuscany - Italy',
+            description:
+              'Experience the timeless elegance of Carrara marble, renowned for its fine grain and bright veining, perfect for creating statement floors, walls, and accents.',
+            tag: 'Signature Collection',
+          },
+          tuscanTravertine: {
+            name: 'Tuscan Travertine',
+            origin: 'Tivoli, Lazio - Italy',
+            description:
+              'Immerse yourself in the warm textures of handcrafted Tuscan travertine, a geological masterpiece that tells a story of thousands of years.',
+            tag: 'Heritage Series',
+          },
+          botticino: {
+            name: 'Botticino Marble',
+            origin: 'Botticino, Lombardy - Italy',
+            description:
+              'Discover the subtle luxury of Botticino marble, with its creamy tones and understated elegance, ideal for tropical settings.',
+            tag: 'Exclusive Reserve',
+          },
         },
-        tuscanTravertine: {
-          name: 'Tuscan Travertine',
-          origin: 'Tivoli, Lazio - Italy',
-          description:
-            'Immerse yourself in the warm textures of handcrafted Tuscan travertine, a geological masterpiece that tells a story of thousands of years.',
-          tag: 'Heritage Series',
-        },
-        botticino: {
-          name: 'Botticino Marble',
-          origin: 'Botticino, Lombardy - Italy',
-          description:
-            'Discover the subtle luxury of Botticino marble, with its creamy tones and understated elegance, ideal for tropical settings.',
-          tag: 'Exclusive Reserve',
-        },
-      },
       footer: {
         craftsmanship: 'Italian Craftsmanship - Since 1987',
         iconAlt: 'Luxus icon',
@@ -668,22 +668,22 @@ export const translations: Record<Locale, Messages> = {
         successMessage: "Thank you! We'll be in touch shortly.",
       },
     },
-    
+
   },
   it: {
     hero: {
-      explorationTag: 'Scopri una nuova visione dell abitare',
-      exploreHeritage: 'Vivi l eccellenza',
+      explorationTag: "Scopri una nuova visione\ndell'abitare",
+      exploreHeritage: "Vivi l'eccellenza",
       headingLine1: 'Il lusso italiano',
       headingLine2: 'nelle Americhe',
       description:
-        "Dall'eccellenza italiana nella costruzione residenziale e negli interni di yacht nasce una nuova dimensione dell abitare di lusso.",
-      cta: 'vivi l eccellenza',
+        "Dall'eccellenza italiana nella costruzione residenziale e negli interni di yacht nasce una nuova dimensione dell\'abitare di lusso.",
+      cta: "vivi l'eccellenza",
       imageAlt: "Edifici di lusso con riflesso sull'acqua",
       stats: {
         experience: 'Anni di esperienza',
         projects: 'Progetti di lusso consegnati',
-        materials: 'Materiali e approvvigionamento italiani',
+        materials: 'Materiali italiani',
       },
     },
     navbar: {
@@ -712,13 +712,13 @@ export const translations: Record<Locale, Messages> = {
         location: 'Marina di Pisa - Italia',
         title: 'Villa Aurea',
         description:
-          'Una fusione di marmo italiano e luce mediterranea che ridefinisce l abitare costiero, attraverso finiture artigianali senza precedenti.',
+          'Una fusione di marmo italiano e luce mediterranea che ridefinisce l\'abitare costiero, attraverso finiture artigianali senza precedenti.',
       },
       eyebrow: 'La Visione',
       headingLine1: 'Dallo Yachting',
-      headingLine2: 'all Abitare',
+      headingLine2: 'all\'Abitare',
       description:
-        'Il nostro approccio nasce in Toscana, dall incontro tra due filiere d eccellenza del Made in Italy: lo yachting di alta gamma e le costruzioni. Con Luxus portiamo nelle Americhe questo patrimonio progettuale e costruttivo, trasferendo nell architettura residenziale gli standard, i materiali e il know-how sviluppati nel mondo dei superyacht. Materiali pensati per l ambiente marino garantiscono resistenza anche nelle condizioni costiere più estreme; tecniche costruttive derivate dalla nautica assicurano durabilità e precisione; mentre il design degli spazi, ispirato ai migliori yacht al mondo, unisce funzionalità ed eleganza. Il risultato è un architettura residenziale che interpreta il lusso italiano in chiave contemporanea, creando residenze capaci di integrarsi armoniosamente con la forza e la bellezza della natura circostante.',
+        'Il nostro approccio nasce in Toscana, dall\'incontro tra due filiere d\'eccellenza del Made in Italy: lo yachting di alta gamma e le costruzioni. Con Luxus portiamo nelle Americhe questo patrimonio progettuale e costruttivo, trasferendo nell\'architettura residenziale gli standard, i materiali e il know-how sviluppati nel mondo dei superyacht. Materiali pensati per l\'ambiente marino garantiscono resistenza anche nelle condizioni costiere più estreme; tecniche costruttive derivate dalla nautica assicurano durabilità e precisione; mentre il design degli spazi, ispirato ai migliori yacht al mondo, unisce funzionalità ed eleganza. Il risultato è un architettura residenziale che interpreta il lusso italiano in chiave contemporanea, creando residenze capaci di integrarsi armoniosamente con la forza e la bellezza della natura circostante.',
       stats: {
         projectsDelivered: 'Progetti Consegnati',
         countriesReached: 'Paesi Raggiunti',
@@ -732,7 +732,7 @@ export const translations: Record<Locale, Messages> = {
         headingLine1: 'Lusso italiano,',
         headingLine2: 'su misura, nelle Americhe.',
         description:
-          'Luxus interpreta il lusso italiano attraverso un approccio esclusivo e su misura. Ogni progetto nasce da una visione integrata che unisce estetica, materiali d eccellenza e cura assoluta del dettaglio, trasformando ogni residenza in un esperienza unica e senza tempo.',
+          'Luxus interpreta il lusso italiano attraverso un approccio esclusivo e su misura. Ogni progetto nasce da una visione integrata che unisce estetica, materiali d\'eccellenza e cura assoluta del dettaglio, trasformando ogni residenza in un\'esperienza unica e senza tempo.',
       },
       cards: {
         realEstate: {
@@ -786,7 +786,7 @@ export const translations: Record<Locale, Messages> = {
         sustainability: {
           title: 'Consulenza Sostenibile',
           description:
-            'Il futuro del lusso e etico. Metodologie certificate LEED abbinate a sistemi energetici ad alta efficienza.',
+            'Il futuro del lusso è etico. Metodologie certificate LEED abbinate a sistemi energetici ad alta efficienza.',
           action: 'Evolvi',
           focus: {
             netZeroStrategy: 'Strategia Net-Zero',
@@ -818,7 +818,7 @@ export const translations: Record<Locale, Messages> = {
           name: 'Marmo di Carrara',
           origin: 'Carrara, Toscana - Italia',
           description:
-            'Scopri l eleganza senza tempo del marmo di Carrara, celebre per grana fine e venature luminose, ideale per pavimenti, pareti e dettagli di carattere.',
+            'Scopri l\'eleganza senza tempo del marmo di Carrara, celebre per grana fine e venature luminose, ideale per pavimenti, pareti e dettagli di carattere.',
           tag: 'Collezione Signature',
         },
         tuscanTravertine: {
@@ -850,7 +850,7 @@ export const translations: Record<Locale, Messages> = {
           quote:
             'Il livello di dettaglio nella lavorazione della pietra non ha eguali in America Centrale. Sembra davvero un frammento del Lago di Como a Panama.',
           name: 'Alessandra Rossi',
-          role: 'Proprietaria Penthouse, Ocean Reef Punta Paitilla',
+          role: 'Proprietaria Penthouse, Punta Paitilla',
         },
         second: {
           quote:
@@ -860,7 +860,7 @@ export const translations: Record<Locale, Messages> = {
         },
         third: {
           quote:
-            'In Luxus ho trovato un partner capace di trasformare l eccellenza italiana in architettura concreta, con un livello di dettaglio e controllo che fa la differenza nei progetti più ambiziosi.',
+            'In Luxus ho trovato un partner capace di trasformare l\'eccellenza italiana in architettura concreta, con un livello di dettaglio e controllo che fa la differenza nei progetti più ambiziosi.',
           name: 'Andrea Melillo',
           role: 'CEO Melillo Group',
         },
@@ -873,25 +873,25 @@ export const translations: Record<Locale, Messages> = {
       paragraphs: [
         'La storia di Luxus nasce in Toscana, tra materie nobili e una tradizione costruttiva che da oltre 25 anni da forma a residenze di alta gamma.',
         'A questa eredita si unisce una raffinata esperienza negli interni di superyacht, creando un linguaggio progettuale distintivo.',
-        'Ne nascono residenze pensate per durare nel tempo, dove proporzione, armonia e finiture artigianali si fondono in spazi senza tempo, affacciati sul mare e capaci di superare i canoni dell architettura tradizionale nelle Americhe.',
+        'Ne nascono residenze pensate per durare nel tempo, dove proporzione, armonia e finiture artigianali si fondono in spazi senza tempo, affacciati sul mare e capaci di superare i canoni dell\'architettura tradizionale nelle Americhe.',
       ],
-      quote: 'L eleganza e l unica bellezza che non sfiorisce mai.',
+      quote: 'L eleganza e l\'unica bellezza che non sfiorisce mai.',
       quoteAuthor: 'Audrey Hepburn',
       principles: {
         title: 'I nostri principi',
         subtitle: 'di progetto',
         items: {
           sustainability: {
-            title: 'Sostenibilita',
+            title: 'Sostenibilità',
             description: 'Armonizziamo architettura e natura per creare residenze durature, pensate per il futuro.',
           },
           craftsmanship: {
-            title: 'Artigianalita italiana',
+            title: 'Artigianalità italiana',
             description: 'Ogni dettaglio racconta una cultura del fare, dalla scelta dei materiali alle finiture su misura.',
           },
           engineering: {
             title: 'Ingegneria di precisione',
-            description: 'Applichiamo rigore tecnico e controllo costante per garantire performance, durata e qualita.',
+            description: 'Applichiamo rigore tecnico e controllo costante per garantire performance, durata e qualità.',
           },
         },
       },

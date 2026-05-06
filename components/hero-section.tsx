@@ -46,7 +46,7 @@ export default function HeroSection() {
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col items-center justify-center px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:px-8">
         <div
-          className={`mb-8 inline-flex w-fit items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-center text-xs font-medium tracking-[0.22em] text-gray-200 uppercase backdrop-blur-md transition-all duration-1000 sm:text-sm ${
+          className={`mb-8 inline-flex w-fit items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-center text-xs font-medium tracking-[0.22em] text-gray-200 uppercase backdrop-blur-md transition-all duration-1000 whitespace-pre-line sm:text-sm ${
             isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
           }`}
         >
