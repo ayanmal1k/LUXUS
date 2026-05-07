@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin } from 'lucide-react';
 import { useI18n } from '@/components/i18n-provider';
 
 const pageLinks = [
@@ -27,20 +27,37 @@ export default function SimpleFooter() {
 
       <div className="relative mx-auto max-w-7xl px-6 py-10 sm:py-12">
         <div className="rounded-2xl border border-[#D4AF37]/20 bg-[rgba(11,11,11,0.58)] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:p-8">
-          <div className="grid gap-9 md:grid-cols-[1.4fr_1fr_1fr] md:items-start">
-            <div className="flex items-center gap-4">
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-[#D4AF37]/22 bg-black/30">
-                <Image
-                  src="/logo-nobg.png"
-                  alt="LUXUS"
-                  width={68}
-                  height={68}
-                  className="h-12 w-12 object-contain drop-shadow-[0_0_18px_rgba(212,175,55,0.35)]"
-                />
+          <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr] md:items-start">
+            <div className="space-y-8">
+              <div className="flex items-center gap-4">
+                <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl border border-[#D4AF37]/22 bg-black/30">
+                  <Image
+                    src="/logo-nobg.png"
+                    alt="LUXUS"
+                    width={58}
+                    height={58}
+                    className="h-10 w-10 object-contain drop-shadow-[0_0_18px_rgba(212,175,55,0.35)]"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium tracking-[0.05em] text-[#F6F3EA]">{t('footer.companyName')}</h3>
+                  <p className="text-[10px] tracking-[0.28em] text-[#D4AF37] uppercase opacity-80">International Group</p>
+                </div>
               </div>
-              <div>
-                <p className="text-[10px] tracking-[0.28em] text-[#D4AF37] uppercase">LUXUS</p>
-                <p className="mt-1 text-sm leading-6 text-[#D7CFBF] sm:text-base">{t('footer.title')}</p>
+
+              <div className="space-y-4">
+                <div className="flex gap-3 text-[#D7CFBF]">
+                  <MapPin className="mt-1 h-4 w-4 flex-shrink-0 text-[#D4AF37]" />
+                  <p className="text-sm leading-relaxed max-w-[280px]">
+                    {t('footer.address')}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 text-[#D7CFBF]">
+                  <Mail className="h-4 w-4 flex-shrink-0 text-[#D4AF37]" />
+                  <a href={`mailto:${t('footer.email')}`} className="text-sm transition-colors hover:text-[#D4AF37]">
+                    {t('footer.email')}
+                  </a>
+                </div>
               </div>
             </div>
 
