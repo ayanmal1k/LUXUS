@@ -502,7 +502,7 @@ export const translations: Record<Locale, Messages> = {
         },
       },
       leadership: {
-        eyebrow: 'The Architects of Experience',
+        eyebrow: 'Luxus International Group',
         heading: 'Our Leadership',
         roles: {
           chiefEngineer: 'Chief Engineer',
@@ -896,7 +896,7 @@ export const translations: Record<Locale, Messages> = {
         },
       },
       leadership: {
-        eyebrow: 'Le firme del progetto',
+        eyebrow: 'Luxus International Group',
         heading: 'Le firme del progetto',
         roles: {
           chiefEngineer: 'Chief Engineer',
@@ -1159,7 +1159,7 @@ export const translations: Record<Locale, Messages> = {
         },
       },
       leadership: {
-        eyebrow: 'Las firmas del proyecto',
+        eyebrow: 'Luxus International Group',
         heading: 'Las firmas del proyecto',
         roles: {
           chiefEngineer: 'Chief Engineer',
