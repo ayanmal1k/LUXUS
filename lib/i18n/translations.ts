@@ -192,8 +192,8 @@ type Messages = {
     quote: string;
     quoteAuthor: string;
     principles: {
+      eyebrow: string;
       title: string;
-      subtitle: string;
       items: {
         sustainability: { title: string; description: string };
         craftsmanship: { title: string; description: string };
@@ -484,8 +484,8 @@ export const translations: Record<Locale, Messages> = {
       quote: 'Elegance is the only beauty that never fades.',
       quoteAuthor: 'Audrey Hepburn',
       principles: {
-        title: 'Our Alchemical',
-        subtitle: 'Principles',
+        eyebrow: 'Our Values',
+        title: 'Our Alchemical Principles',
         items: {
           sustainability: {
             title: 'Sustainability',
@@ -878,8 +878,8 @@ export const translations: Record<Locale, Messages> = {
       quote: 'L\'eleganza è l\'unica bellezza che non sfiorisce mai.',
       quoteAuthor: 'Audrey Hepburn',
       principles: {
+        eyebrow: 'I nostri valori',
         title: 'I nostri principi',
-        subtitle: 'di progetto',
         items: {
           sustainability: {
             title: 'Sostenibilità',
@@ -1141,8 +1141,8 @@ export const translations: Record<Locale, Messages> = {
       quote: 'La elegancia es la única belleza que nunca se desvanece.',
       quoteAuthor: 'Audrey Hepburn',
       principles: {
+        eyebrow: 'Nuestros valores',
         title: 'Nuestros principios',
-        subtitle: 'de proyecto',
         items: {
           sustainability: {
             title: 'Sostenibilidad',
