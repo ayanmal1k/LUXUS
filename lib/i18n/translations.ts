@@ -875,7 +875,7 @@ export const translations: Record<Locale, Messages> = {
         'A questa eredita si unisce una raffinata esperienza negli interni di superyacht, creando un linguaggio progettuale distintivo.',
         'Ne nascono residenze pensate per durare nel tempo, dove proporzione, armonia e finiture artigianali si fondono in spazi senza tempo, affacciati sul mare e capaci di superare i canoni dell\'architettura tradizionale nelle Americhe.',
       ],
-      quote: 'L eleganza e l\'unica bellezza che non sfiorisce mai.',
+      quote: 'L\'eleganza è l\'unica bellezza che non sfiorisce mai.',
       quoteAuthor: 'Audrey Hepburn',
       principles: {
         title: 'I nostri principi',
