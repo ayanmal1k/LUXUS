@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useI18n } from '@/components/i18n-provider';
+import { ContactModal } from './contact-modals';
 
 type NavbarKey = 'home' | 'about' | 'services' | 'portfolio';
 
@@ -30,6 +31,7 @@ function isHashLink(href: string) {
 export default function GlassmorphismNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const { t } = useI18n();
 
   useEffect(() => {
@@ -126,13 +128,13 @@ export default function GlassmorphismNavbar() {
                 </Link>
               )
             ))}
-            <Link
-              href="/#contact"
-              className="relative inline-flex items-center rounded-full border border-[#D4AF37]/40 px-5 py-2 text-[10px] tracking-[0.28em] uppercase font-semibold text-[#D4AF37] hover:text-[#0B0B0B] overflow-hidden transition-colors duration-400 group"
+            <button
+              onClick={() => setContactOpen(true)}
+              className="relative inline-flex items-center rounded-full border border-[#D4AF37]/40 px-5 py-2 text-[10px] tracking-[0.28em] uppercase font-semibold text-[#D4AF37] hover:text-[#0B0B0B] overflow-hidden transition-colors duration-400 group cursor-pointer"
             >
               <span className="absolute inset-0 bg-[#D4AF37] translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out rounded-full" />
               <span className="relative z-10">{t('navbar.contactUs')}</span>
-            </Link>
+            </button>
           </div>
 
           {/* Hamburger — visible on mobile only, pushed to right */}
@@ -208,17 +210,20 @@ export default function GlassmorphismNavbar() {
                 </Link>
               )
             ))}
-            <Link
-              href="/#contact"
-              onClick={() => setMenuOpen(false)}
-              className="mt-5 w-full text-center rounded-full border border-[#D4AF37]/50 py-3 text-[10px] tracking-[0.3em] uppercase font-semibold text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0B0B0B] transition-all duration-400"
+            <button
+              onClick={() => {
+                setMenuOpen(false);
+                setContactOpen(true);
+              }}
+              className="mt-5 w-full text-center rounded-full border border-[#D4AF37]/50 py-3 text-[10px] tracking-[0.3em] uppercase font-semibold text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0B0B0B] transition-all duration-400 cursor-pointer"
             >
               {t('navbar.contactUs')}
-            </Link>
+            </button>
           </div>
         </div>
 
       </nav>
+      <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
     </>
   );
 }

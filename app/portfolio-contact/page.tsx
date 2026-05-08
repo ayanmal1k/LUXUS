@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import { useI18n } from '@/components/i18n-provider';
 import { translations } from '@/lib/i18n/translations';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { toast } from 'sonner';
 
 export default function PortfolioContactPage() {
   const { t, locale } = useI18n();
@@ -28,13 +31,21 @@ export default function PortfolioContactPage() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      await addDoc(collection(db, 'portfolio_inquiries'), {
+        ...formData,
+        createdAt: serverTimestamp(),
+      });
       setIsSubmitted(true);
-      setIsLoading(false);
       setFormData({ fullName: '', email: '', phone: '', company: '', projectType: '', message: '' });
-      setTimeout(() => setIsSubmitted(false), 3000);
-    }, 1200);
+      toast.success(t('portfolioContactPage.form.successMessage'));
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error('Error submitting portfolio contact form:', error);
+      toast.error('Failed to submit form. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

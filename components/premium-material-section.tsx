@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useI18n } from '@/components/i18n-provider';
+import { useState } from 'react';
+import { CatalogModal } from './contact-modals';
 
 const containerVariants = {
   hidden: {},
@@ -22,6 +24,7 @@ const cardVariants = {
 
 export default function PremiumMaterialSection() {
   const { t } = useI18n();
+  const [catalogOpen, setCatalogOpen] = useState(false);
 
   const materials = [
     {
@@ -221,7 +224,10 @@ export default function PremiumMaterialSection() {
           viewport={{ once: true }}
           className="mt-16 flex justify-center"
         >
-          <button className="group relative overflow-hidden bg-gradient-to-r from-[#D4AF37] via-[#E8C547] to-[#D4AF37] px-8 py-3 text-[11px] font-medium tracking-[0.18em] text-[#0B0B0B] uppercase transition-all duration-300 hover:shadow-[0_0_24px_rgba(212,175,55,0.6)] border border-[#D4AF37]">
+          <button 
+            onClick={() => setCatalogOpen(true)}
+            className="group relative overflow-hidden bg-gradient-to-r from-[#D4AF37] via-[#E8C547] to-[#D4AF37] px-8 py-3 text-[11px] font-medium tracking-[0.18em] text-[#0B0B0B] uppercase transition-all duration-300 hover:shadow-[0_0_24px_rgba(212,175,55,0.6)] border border-[#D4AF37] cursor-pointer"
+          >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500 animate-pulse" />
             <span className="relative">{t('premiumMaterialsSection.catalogButton')}</span>
           </button>
@@ -249,6 +255,7 @@ export default function PremiumMaterialSection() {
 
       {/* Bottom divider */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent z-10" />
+      <CatalogModal open={catalogOpen} onOpenChange={setCatalogOpen} />
     </section>
   );
 }
