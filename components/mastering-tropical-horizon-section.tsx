@@ -174,7 +174,7 @@ export default function MasteringTropicalHorizonSection() {
 
             {/* CTA link */}
             <motion.a
-              href="/portfolio"
+              href="/portfolio-contact"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.44 }}

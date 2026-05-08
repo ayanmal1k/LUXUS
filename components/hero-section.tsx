@@ -98,7 +98,8 @@ export default function HeroSection() {
             isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}
         >
-          <button
+          <a
+            href="#services"
             className="group relative overflow-hidden rounded-md px-8 py-3 text-sm font-semibold tracking-[0.14em] text-gray-900 uppercase transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:px-12 sm:py-4 sm:text-base"
             style={{
               backgroundColor: '#D4AF37',
@@ -115,7 +116,7 @@ export default function HeroSection() {
               }}
             />
             <span className="relative">{t('hero.cta')}</span>
-          </button>
+          </a>
         </div>
 
         {/* <div
