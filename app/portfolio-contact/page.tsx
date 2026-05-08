@@ -220,7 +220,7 @@ export default function PortfolioContactPage() {
                   disabled={isLoading}
                   className="mt-8 w-full border border-[#D4AF37] bg-[#D4AF37] px-6 py-3 text-[11px] font-medium tracking-[0.18em] text-[#0D0D0D] uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E0BF58] disabled:opacity-50 disabled:hover:translate-y-0"
                 >
-                  {isLoading ? t('portfolioContactPage.form.sending') : t('portfolioContactPage.form.submit')}
+                  {isLoading ? t('portfolioContactPage.form.submit.sending') : t('portfolioContactPage.form.submit.default')}
                 </button>
 
                 {/* Success Message */}

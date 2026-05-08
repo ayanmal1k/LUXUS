@@ -277,6 +277,39 @@ type Messages = {
       successMessage: string;
     };
   };
+  admin: {
+    title: string;
+    subtitle: string;
+    loginTitle: string;
+    loginSubtitle: string;
+    emailPlaceholder: string;
+    passwordPlaceholder: string;
+    loginButton: string;
+    logoutButton: string;
+    stats: {
+      contacts: string;
+      catalog: string;
+      portfolio: string;
+      total: string;
+    };
+    tabs: {
+      contacts: string;
+      catalog: string;
+      portfolio: string;
+    };
+    card: {
+      inquiry: string;
+      request: string;
+      portfolio: string;
+      deleteConfirm: string;
+      deleted: string;
+      deleteError: string;
+    };
+    auth: {
+      unauthorized: string;
+      welcome: string;
+    };
+  };
 };
 
 export const translations: Record<Locale, Messages> = {
@@ -672,7 +705,39 @@ export const translations: Record<Locale, Messages> = {
         successMessage: "Thank you! We'll be in touch shortly.",
       },
     },
-
+    admin: {
+      title: 'Admin Dashboard',
+      subtitle: 'Managing LUXUS International inquiries',
+      loginTitle: 'Luxus Admin',
+      loginSubtitle: 'Secure access for administration only',
+      emailPlaceholder: 'Admin Email',
+      passwordPlaceholder: 'Password',
+      loginButton: 'LOGIN',
+      logoutButton: 'Logout',
+      stats: {
+        contacts: 'Total Contacts',
+        catalog: 'Catalog Requests',
+        portfolio: 'Portfolio Inquiries',
+        total: 'Total Leads',
+      },
+      tabs: {
+        contacts: 'Contact Form',
+        catalog: 'Catalog Requests',
+        portfolio: 'Portfolio Inquiries',
+      },
+      card: {
+        inquiry: 'Contact Inquiry',
+        request: 'Catalog Request',
+        portfolio: 'Portfolio Inquiry',
+        deleteConfirm: 'Are you sure you want to delete this entry?',
+        deleted: 'Entry deleted.',
+        deleteError: 'Failed to delete entry.',
+      },
+      auth: {
+        unauthorized: 'Unauthorized access.',
+        welcome: 'Welcome back, Admin.',
+      },
+    },
   },
   it: {
     hero: {
@@ -932,10 +997,43 @@ export const translations: Record<Locale, Messages> = {
         company: 'Azienda',
         projectType: 'Tipo di progetto',
         projectTypeOptions: { residential: 'Residenziale', commercial: 'Commerciale', marine: 'Marino', mixed: 'Uso Misto', other: 'Altro' },
-        message: 'Messaggio',
+        message: 'Mensaggio',
         placeholders: { name: 'Il tuo nome', email: 'tuo@email.com', phone: '+1 (555) 000-0000', company: 'La tua azienda', message: 'Raccontaci del tuo progetto...', projectType: 'Seleziona un tipo di progetto' },
         submit: { sending: 'Invio in corso...', default: 'Richiedi il Portfolio' },
         successMessage: 'Grazie! Ti contatteremo a breve.',
+      },
+    },
+    admin: {
+      title: 'Pannello Admin',
+      subtitle: 'Gestione contatti LUXUS International',
+      loginTitle: 'Luxus Admin',
+      loginSubtitle: 'Accesso sicuro solo per amministrazione',
+      emailPlaceholder: 'Email Admin',
+      passwordPlaceholder: 'Password',
+      loginButton: 'ACCEDI',
+      logoutButton: 'Esci',
+      stats: {
+        contacts: 'Contatti Totali',
+        catalog: 'Richieste Catalogo',
+        portfolio: 'Richieste Portfolio',
+        total: 'Lead Totali',
+      },
+      tabs: {
+        contacts: 'Form Contatto',
+        catalog: 'Richieste Catalogo',
+        portfolio: 'Richieste Portfolio',
+      },
+      card: {
+        inquiry: 'Richiesta Contatto',
+        request: 'Richiesta Catalogo',
+        portfolio: 'Richiesta Portfolio',
+        deleteConfirm: 'Sei sicuro di voler eliminare questa voce?',
+        deleted: 'Voce eliminata.',
+        deleteError: 'Impossibile eliminare la voce.',
+      },
+      auth: {
+        unauthorized: 'Accesso non autorizzato.',
+        welcome: 'Bentornato, Admin.',
       },
     },
   },
@@ -1203,6 +1301,39 @@ export const translations: Record<Locale, Messages> = {
           name: 'Andrea Melillo',
           role: 'CEO Melillo Group',
         },
+      },
+    },
+    admin: {
+      title: 'Panel de Admin',
+      subtitle: 'Gestión de contactos LUXUS International',
+      loginTitle: 'Luxus Admin',
+      loginSubtitle: 'Acceso seguro solo para administración',
+      emailPlaceholder: 'Email Admin',
+      passwordPlaceholder: 'Contraseña',
+      loginButton: 'ACCEDER',
+      logoutButton: 'Salir',
+      stats: {
+        contacts: 'Contactos Totales',
+        catalog: 'Solicitudes Catálogo',
+        portfolio: 'Solicitudes Portafolio',
+        total: 'Leads Totales',
+      },
+      tabs: {
+        contacts: 'Formulario Contacto',
+        catalog: 'Solicitudes Catálogo',
+        portfolio: 'Solicitudes Portafolio',
+      },
+      card: {
+        inquiry: 'Consulta Contacto',
+        request: 'Solicitud Catálogo',
+        portfolio: 'Consulta Portafolio',
+        deleteConfirm: '¿Estás seguro de que quieres eliminar esta entrada?',
+        deleted: 'Entrada eliminada.',
+        deleteError: 'Error al eliminar la entrada.',
+      },
+      auth: {
+        unauthorized: 'Acceso no autorizado.',
+        welcome: 'Bienvenido, Admin.',
       },
     },
   },

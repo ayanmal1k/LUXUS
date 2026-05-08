@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { I18nProvider } from '@/components/i18n-provider'
 import './globals.css'
 
-import GlassmorphismNavbar from '@/components/glassmorphism-navbar'
+import NavbarWrapper from '@/components/navbar-wrapper'
 import FloatingLanguageSelector from '@/components/floating-language-selector'
 import SimpleFooter from '@/components/simple-footer'
 import { defaultLocale } from '@/lib/i18n/translations'
@@ -92,7 +92,7 @@ export default function RootLayout({
     <html lang={defaultLocale}>
       <body className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} font-sans antialiased`}>
         <I18nProvider initialLocale={defaultLocale}>
-          <GlassmorphismNavbar />
+          <NavbarWrapper />
           {children}
           <SimpleFooter />
           <FloatingLanguageSelector />
