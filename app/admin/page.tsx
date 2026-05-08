@@ -217,13 +217,13 @@ export default function AdminPage() {
             {/* Content Tabs */}
             <Tabs defaultValue="contacts" className="w-full">
               <TabsList className="bg-[#111111] border border-[#D4AF37]/20 p-1 mb-8 w-fit">
-                <TabsTrigger value="contacts" className="data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#0B0B0B] px-8 py-2.5 transition-all duration-300 font-bold uppercase text-[10px] tracking-widest">
+                <TabsTrigger value="contacts" className="data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#0B0B0B] text-[#D4AF37] px-8 py-2.5 transition-all duration-300 font-bold uppercase text-[10px] tracking-widest hover:text-[#D4AF37]/80">
                   {t('admin.tabs.contacts')}
                 </TabsTrigger>
-                <TabsTrigger value="catalog" className="data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#0B0B0B] px-8 py-2.5 transition-all duration-300 font-bold uppercase text-[10px] tracking-widest">
+                <TabsTrigger value="catalog" className="data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#0B0B0B] text-[#D4AF37] px-8 py-2.5 transition-all duration-300 font-bold uppercase text-[10px] tracking-widest hover:text-[#D4AF37]/80">
                   {t('admin.tabs.catalog')}
                 </TabsTrigger>
-                <TabsTrigger value="portfolio" className="data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#0B0B0B] px-8 py-2.5 transition-all duration-300 font-bold uppercase text-[10px] tracking-widest">
+                <TabsTrigger value="portfolio" className="data-[state=active]:bg-[#D4AF37] data-[state=active]:text-[#0B0B0B] text-[#D4AF37] px-8 py-2.5 transition-all duration-300 font-bold uppercase text-[10px] tracking-widest hover:text-[#D4AF37]/80">
                   {t('admin.tabs.portfolio')}
                 </TabsTrigger>
               </TabsList>
